@@ -24,8 +24,8 @@
     .booking-form-section { background:var(--graphite); border-radius:var(--radius-2xl); padding:var(--space-16); }
     .booking-form-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:var(--space-12); align-items:start; }
     .services-tabs-bar { display:flex; gap:var(--space-3); flex-wrap:wrap; padding-bottom:var(--space-6); margin-bottom:var(--space-10); border-bottom:1px solid var(--border); }
-    .serv-tab { padding:var(--space-3) var(--space-5); border-radius:var(--radius-full); font-size:var(--text-sm); font-weight:600; border:1.5px solid var(--border); cursor:pointer; transition:all 0.25s; background:none; color:var(--text-secondary); }
-    .serv-tab.active,.serv-tab:hover { background:var(--brass); border-color:var(--brass); color:white; }
+    .serv-tab { padding:var(--space-3) var(--space-5); border-radius:var(--radius-full); font-size:var(--text-sm); font-weight:600; border:1.5px solid rgba(247,243,235,0.35); cursor:pointer; transition:all 0.25s; background:rgba(247,243,235,0.08); color:var(--ivory); }
+    .serv-tab:hover { background:rgba(176,141,87,0.2); border-color:var(--brass-light); color:var(--ivory); }
     .services-hero > div { text-align:center; }
     .services-hero .breadcrumb { justify-content:center; }
     .services-hero .section-label { justify-content:center; }
@@ -60,7 +60,7 @@
         <div class="section-label" style="color:var(--brass-light);" data-reveal="left">What We Offer</div>
         <h1 id="services-page-heading" class="text-7xl text-inverse tracking-tight" style="max-width:640px;margin-bottom:var(--space-8);" data-reveal="up">Expert Installation<br>for Every Room</h1>
         <div class="services-tabs-bar" data-reveal="up" data-delay="200">
-          <a href="#flatpack" class="serv-tab active">Flat-Pack Assembly</a>
+          <a href="#flatpack" class="serv-tab">Flat-Pack Assembly</a>
           <a href="#tv" class="serv-tab">TV Mounting</a>
           <a href="#shelves" class="serv-tab">Shelf Installation</a>
           <a href="#kitchen" class="serv-tab">Kitchen Fitting</a>
