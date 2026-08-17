@@ -31,6 +31,7 @@
     .services-hero .section-label { justify-content:center; }
     .services-hero h1 { margin-left:auto; margin-right:auto; }
     .services-tabs-bar { justify-content:center; }
+    html { scroll-padding-top: calc(var(--navbar-h-scroll) + 24px); }
     @media(max-width:1024px){ .service-section { grid-template-columns:1fr; } .service-section.reverse .service-img,.service-section.reverse .service-content { order:unset; } .booking-form-grid { grid-template-columns:1fr; } }
   </style>
 </head>
@@ -87,7 +88,7 @@
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Packaging removed and disposed of on request</span></div>
             </div>
             <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
-              <a href="contact.html" class="btn btn-primary">Book Assembly</a>
+              <a href="#booking" class="btn btn-primary">Book Assembly</a>
               <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £45</strong> per item</span>
             </div>
           </div>
@@ -114,7 +115,7 @@
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Soundbar and device mounting available</span></div>
             </div>
             <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
-              <a href="contact.html" class="btn btn-primary">Book TV Mounting</a>
+              <a href="#booking" class="btn btn-primary">Book TV Mounting</a>
               <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £79</strong> per screen</span>
             </div>
           </div>
@@ -141,7 +142,7 @@
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Laser levelling for perfect alignment</span></div>
             </div>
             <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
-              <a href="contact.html" class="btn btn-primary">Book Shelf Install</a>
+              <a href="#booking" class="btn btn-primary">Book Shelf Install</a>
               <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £35</strong> per shelf</span>
             </div>
           </div>
@@ -168,7 +169,7 @@
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Appliance integration and door adjustments</span></div>
             </div>
             <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
-              <a href="contact.html" class="btn btn-primary">Book Kitchen Fitting</a>
+              <a href="#booking" class="btn btn-primary">Book Kitchen Fitting</a>
               <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £349</strong> full kitchen</span>
             </div>
           </div>
@@ -177,7 +178,7 @@
     </section>
 
     <!-- SECTION 6: BOOKING CTA FORM -->
-    <section class="section bg-primary" aria-labelledby="booking-heading">
+    <section id="booking" class="section bg-primary" aria-labelledby="booking-heading">
       <div class="container">
         <div class="booking-form-section" data-reveal="up">
           <div class="booking-form-grid">
