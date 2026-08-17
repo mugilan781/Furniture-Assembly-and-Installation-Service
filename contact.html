@@ -21,11 +21,12 @@
     .contact-info-icon { width:48px; height:48px; border-radius:var(--radius-md); background:rgba(176,141,87,0.15); border:1px solid rgba(176,141,87,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
     .contact-info-icon svg { width:22px; height:22px; color:var(--brass); }
     .map-embed { border-radius:var(--radius-2xl); overflow:hidden; height:400px; background:var(--bg-tertiary); display:flex; align-items:center; justify-content:center; border:1px solid var(--border); position:relative; }
-    .map-placeholder { text-align:center; }
+    .map-embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
     .contact-hero-content { text-align:center; }
     .contact-hero-content .breadcrumb { justify-content:center; }
     .contact-hero-content .section-label { justify-content:center; }
     .contact-hero-content h1,.contact-hero-content p { margin-left:auto; margin-right:auto; }
+    [data-theme="dark"] input[type="date"] { color-scheme: dark; }
     @media(max-width:1024px){ .contact-layout { grid-template-columns:1fr; } }
   </style>
 </head>
@@ -163,9 +164,9 @@
               <div style="margin-top:var(--space-6);padding-top:var(--space-5);border-top:1px solid rgba(247,243,235,0.1);">
                 <p class="text-sm font-bold" style="color:var(--ivory);margin-bottom:var(--space-4);">Follow Us</p>
                 <div style="display:flex;gap:var(--space-3);">
-                  <a href="#" class="social-btn" aria-label="Instagram" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.12);color:var(--ivory);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-                  <a href="#" class="social-btn" aria-label="Facebook" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.12);color:var(--ivory);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-                  <a href="#" class="social-btn" aria-label="LinkedIn" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.12);color:var(--ivory);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                  <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.12);color:var(--ivory);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.12);color:var(--ivory);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.12);color:var(--ivory);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
                 </div>
               </div>
             </div>
@@ -178,11 +179,7 @@
     <section class="section-sm bg-secondary" aria-label="Our location">
       <div class="container">
         <div class="map-embed" data-reveal="up">
-          <div class="map-placeholder">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--stone)" stroke-width="1.5" style="margin:0 auto var(--space-4);display:block;opacity:0.4;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p class="text-secondary text-sm" style="max-width:260px;">24 Craftsman Lane, London, E1 6AW</p>
-            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="margin-top:var(--space-5);">Open in Google Maps</a>
-          </div>
+          <iframe src="https://www.google.com/maps?q=24%20Craftsman%20Lane%2C%20London%2C%20E1%206AW&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ASSEMBLIO location — 24 Craftsman Lane, London E1 6AW"></iframe>
         </div>
       </div>
     </section>
