@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <style>
-    .blog-hero { min-height:55vh; background:var(--bg-secondary); display:flex; align-items:center; position:relative; overflow:hidden; padding-top:var(--navbar-h); }
-    .blog-hero-accent { position:absolute; top:-100px; right:-100px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(176,141,87,0.08),transparent 70%); pointer-events:none; }
+    .blog-hero { min-height:55vh; background:var(--graphite); display:flex; align-items:center; position:relative; overflow:hidden; padding-top:var(--navbar-h); }
+    .blog-hero-bg { position:absolute; inset:0; background-size:cover; background-position:center; opacity:0.35; z-index:1; }
+    .blog-hero-accent { position:absolute; top:-100px; right:-100px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(176,141,87,0.15),transparent 70%); pointer-events:none; z-index:2; }
+    .blog-hero .container { position:relative; z-index:3; text-align:center; }
     .featured-post { display:grid; grid-template-columns:1.4fr 1fr; gap:0; border-radius:var(--radius-2xl); overflow:hidden; background:var(--bg-primary); border:1px solid var(--border); }
     [data-theme="dark"] .featured-post { background:var(--bg-secondary); }
     .featured-post-img img { width:100%; height:100%; object-fit:cover; }
@@ -28,14 +30,12 @@
     .ticker-track { display:flex; gap:var(--space-8); width:max-content; animation:marqueeScroll 25s linear infinite; align-items:center; }
     .ticker-item { display:flex; align-items:center; gap:var(--space-4); color:rgba(247,243,235,0.65); font-size:var(--text-sm); font-weight:500; white-space:nowrap; }
     .ticker-dot { width:4px; height:4px; border-radius:50%; background:var(--brass); flex-shrink:0; }
-    .blog-hero .container { text-align:center; }
     .blog-hero .breadcrumb { justify-content:center; }
+    .blog-hero .breadcrumb a { color:rgba(247,243,235,0.6); }
+    .blog-hero .breadcrumb-current { color:var(--ivory); }
+    .blog-hero .breadcrumb-sep { background:rgba(247,243,235,0.3); }
     .blog-hero .section-label { justify-content:center; }
     .blog-hero p { margin-left:auto; margin-right:auto; }
-    .blog-hero .flex.items-end { justify-content:center; }
-    .blog-hero .flex.items-end > div:last-child { position:absolute; right:var(--space-6); top:50%; transform:translateY(-50%); }
-    .blog-hero .flex.items-end > div:last-child > div { align-items:center; }
-    @media(max-width:640px){ .blog-hero .flex.items-end > div:last-child { display:none; } }
     @media(max-width:1024px){ .featured-post { grid-template-columns:1fr; } .featured-post-img { aspect-ratio:16/9; } .blog-3-grid { grid-template-columns:repeat(2,1fr); } }
     @media(max-width:640px){ .blog-3-grid { grid-template-columns:1fr; } .newsletter-input-wrap { flex-direction:column; } }
   </style>
@@ -60,21 +60,14 @@
   <main>
     <!-- SECTION 1: BLOG HERO / MASTHEAD -->
     <section class="blog-hero" aria-labelledby="blog-heading">
+      <div class="blog-hero-bg" style="background-image:url('images/blog-hero-bg.jpg');"></div>
       <div class="blog-hero-accent"></div>
-      <div class="container" style="padding-top:var(--space-12);padding-bottom:var(--space-12);">
+      <div class="container" style="padding-top:var(--space-16);padding-bottom:var(--space-16);">
         <nav class="breadcrumb" style="margin-bottom:var(--space-6);" aria-label="Breadcrumb"><a href="index.html">Home</a><div class="breadcrumb-sep"></div><span class="breadcrumb-current">Blog</span></nav>
-        <div class="flex items-end justify-between" style="flex-wrap:wrap;gap:var(--space-6);">
-          <div>
-            <div class="section-label" data-reveal="left">Expert Knowledge</div>
-            <h1 id="blog-heading" class="text-7xl tracking-tight" data-reveal="up">The ASSEMBLIO<br><em>Journal</em></h1>
-            <p class="text-secondary text-lg" style="margin-top:var(--space-4);max-width:480px;" data-reveal="up" data-delay="150">Installation tips, design inspiration, brand guides, and home improvement ideas from our expert team.</p>
-          </div>
-          <div data-reveal="right" style="flex-shrink:0;">
-            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:var(--space-2);">
-              <span class="text-4xl serif text-brass">48</span>
-              <span class="text-xs font-bold tracking-widest uppercase text-muted">Articles Published</span>
-            </div>
-          </div>
+        <div style="text-align:center;">
+          <div class="section-label" style="color:var(--brass-light);" data-reveal="up">Expert Knowledge</div>
+          <h1 id="blog-heading" class="text-7xl text-inverse tracking-tight" data-reveal="up" data-delay="100">The ASSEMBLIO<br><em style="color:var(--brass-light);">Journal</em></h1>
+          <p class="text-inverse text-lg" style="margin-top:var(--space-4);max-width:560px;opacity:0.8;" data-reveal="up" data-delay="200">Installation tips, design inspiration, brand guides, and home improvement ideas from our expert team.</p>
         </div>
       </div>
     </section>
@@ -85,7 +78,7 @@
         <div class="section-label" style="margin-bottom:var(--space-6);" data-reveal="left">Featured Article</div>
         <a href="blog-details.html" class="featured-post" style="display:grid;text-decoration:none;" data-reveal="up">
           <div class="featured-post-img img-zoom-wrap">
-            <img src="images/blog-hero.jpg" alt="Interior design tools and materials flat lay" loading="lazy">
+            <img src="images/blog-featured-new.jpg" alt="The Complete Guide to Furniture Assembly" loading="lazy">
           </div>
           <div class="featured-post-body">
             <div class="badge badge-brass" style="margin-bottom:var(--space-5);">Featured</div>
