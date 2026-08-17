@@ -1856,8 +1856,8 @@
 .nav-link:hover::after,.nav-link.active::after { width:100%; }
 .nav-links { display:flex; align-items:center; gap:var(--space-8); list-style:none; flex:1; justify-content:center; }
 .nav-actions { display:flex; align-items:center; gap:var(--space-3); flex-shrink:0; }
-.nav-icon-btn { width:36px; height:36px; border-radius:50%; border:1.5px solid var(--border); background:none; color:var(--text-primary); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px; transition:all 0.25s; }
-.navbar-dark .nav-icon-btn { border-color:rgba(247,243,235,0.15); color:rgba(247,243,235,0.7); }
+.nav-icon-btn { width:36px; height:36px; border-radius:50%; border:1.5px solid rgba(176,141,87,0.35); background:none; color:var(--text-primary); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px; transition:all 0.25s; }
+.navbar-dark .nav-icon-btn { border-color:rgba(176,141,87,0.35); color:rgba(247,243,235,0.7); }
 .nav-icon-btn svg { width:16px; height:16px; }
 .nav-icon-btn:hover { border-color:rgba(176,141,87,0.5); color:var(--brass); background:rgba(176,141,87,0.08); }
 .dir-label { font-size:9px; font-weight:800; line-height:1; }
