@@ -1253,7 +1253,7 @@
 
 .footer-bottom {
   border-top: none;
-  padding: var(--space-6) 0;
+  padding: var(--space-4) 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1772,7 +1772,7 @@
 .newsletter-btn { flex-shrink:0; display:inline-flex; align-items:center; justify-content:center; padding:var(--space-3) var(--space-5); background:linear-gradient(135deg,var(--brass),#7a5e38); color:#fff; border:none; border-radius:var(--radius-md); font-family:var(--font-sans); font-size:var(--text-sm); font-weight:700; cursor:pointer; transition:all 0.25s; white-space:nowrap; }
 .newsletter-btn:hover { transform:translateY(-1px); box-shadow:0 8px 24px rgba(176,141,87,0.3); }
 .newsletter-btn:disabled { opacity:0.7; cursor:default; transform:none; box-shadow:none; }
-.footer-bottom { padding: var(--space-6) 0; }
+.footer-bottom { padding: var(--space-4) 0; }
 .footer-bottom .container { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--space-4); width:100%; max-width:var(--container-max); }
 .footer-copy { font-size:var(--text-xs); color:rgba(247,243,235,0.3); }
 .footer-legal { display:flex; gap:var(--space-5); }
