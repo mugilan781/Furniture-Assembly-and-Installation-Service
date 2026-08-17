@@ -16,11 +16,16 @@
     .brand-story-text h2 { font-size:clamp(2rem,4vw,3.5rem); margin-bottom:var(--space-6); }
     .brand-story-text p { font-size:var(--text-base); line-height:1.9; color:var(--text-secondary); margin-bottom:var(--space-5); }
     .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6); }
-    .team-card { border-radius:var(--radius-xl); overflow:hidden; background:var(--bg-primary); border:1px solid var(--border); transition:all 0.35s var(--ease-smooth); }
+    .team-card { border-radius:var(--radius-xl); overflow:hidden; background:var(--bg-primary); border:1px solid var(--border); transition:all 0.35s var(--ease-smooth); display:flex; flex-direction:column; }
     [data-theme="dark"] .team-card { background:var(--bg-secondary); }
     .team-card:hover { box-shadow:var(--shadow-xl); transform:translateY(-6px); }
-    .team-avatar { aspect-ratio:4/5; overflow:hidden; background:linear-gradient(135deg,var(--brass),var(--walnut)); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:5rem; color:white; }
-    .team-body { padding:var(--space-5); }
+    .team-card:hover .team-image-wrap img { transform:scale(1.05); }
+    .team-image-wrap { aspect-ratio:4/3; overflow:hidden; position:relative; background:var(--bg-secondary); border-bottom:1px solid var(--border); }
+    .team-image-wrap img { width:100%; height:100%; object-fit:cover; object-position:top center; transition:transform 0.5s var(--ease-smooth); }
+    .team-body { padding:var(--space-6); display:flex; flex-direction:column; flex:1; }
+    .team-skills { display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:var(--space-4); }
+    .skill-tag { font-size:11px; padding:3px 10px; border-radius:var(--radius-full); background:rgba(176,141,87,0.08); border:1px solid rgba(176,141,87,0.2); color:var(--text-secondary); font-weight:600; }
+    .badge-brass { background:var(--brass); color:white; padding:3px 9px; border-radius:var(--radius-full); font-weight:700; letter-spacing:0.04em; }
     .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6); }
     .value-item { display:flex; gap:var(--space-5); align-items:flex-start; }
     .value-icon { width:52px; height:52px; border-radius:var(--radius-lg); background:rgba(176,141,87,0.1); border:1px solid rgba(176,141,87,0.15); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
@@ -65,7 +70,7 @@
   <main>
     <!-- SECTION 1: ABOUT HERO -->
     <section class="page-hero" aria-labelledby="about-heading">
-      <div class="page-hero-bg" style="background-image:url('images/about-team.jpg');"></div>
+      <div class="page-hero-bg" style="background-image:url('images/about-hero-new.jpg');"></div>
       <div class="page-hero-content">
         <nav class="breadcrumb" style="margin-bottom:var(--space-6);" aria-label="Breadcrumb">
           <a href="index.html" style="color:rgba(247,243,235,0.6);">Home</a>
@@ -95,7 +100,7 @@
           </div>
           <div data-reveal="right">
             <div class="img-zoom-wrap" style="border-radius:var(--radius-2xl);overflow:hidden;">
-              <img src="images/about-team.jpg" alt="ASSEMBLIO installation team" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;">
+              <img src="images/about-story-new.jpg" alt="ASSEMBLIO master craftsman at work" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;">
             </div>
           </div>
         </div>
@@ -111,27 +116,59 @@
         </div>
         <div class="team-grid" data-stagger-grid>
           <div class="team-card" data-reveal="up">
-            <div class="team-avatar">T</div>
+            <div class="team-image-wrap">
+              <img src="images/team-thomas.jpg" alt="Thomas Reid — Founder & Lead Installer" loading="lazy">
+            </div>
             <div class="team-body">
-              <h3 class="text-xl" style="font-family:var(--font-serif);margin-bottom:4px;">Thomas Reid</h3>
+              <div class="flex items-center justify-between" style="margin-bottom:var(--space-2);">
+                <h3 class="text-xl" style="font-family:var(--font-serif);margin:0;">Thomas Reid</h3>
+                <span class="badge-brass" style="font-size:11px;">12 Yrs Exp</span>
+              </div>
               <p class="text-brass text-xs font-bold tracking-wider uppercase" style="margin-bottom:var(--space-3);">Founder & Lead Installer</p>
-              <p class="text-sm text-secondary" style="line-height:1.7;">12 years experience. Trained carpenter, bespoke furniture specialist, and kitchen fitting expert.</p>
+              <p class="text-sm text-secondary" style="line-height:1.7;margin-bottom:var(--space-4);">Trained master carpenter specializing in high-end bespoke furniture assembly, intricate wardrobe systems, and precision kitchen fitting across London.</p>
+              <div class="team-skills">
+                <span class="skill-tag">Master Carpenter</span>
+                <span class="skill-tag">Bespoke Joinery</span>
+                <span class="skill-tag">IKEA PAX Specialist</span>
+              </div>
             </div>
           </div>
+
           <div class="team-card" data-reveal="up" data-delay="100">
-            <div class="team-avatar" style="background:linear-gradient(135deg,var(--olive),var(--olive-light));">M</div>
+            <div class="team-image-wrap">
+              <img src="images/team-marcus.jpg" alt="Marcus Williams — Senior Installation Specialist" loading="lazy">
+            </div>
             <div class="team-body">
-              <h3 class="text-xl" style="font-family:var(--font-serif);margin-bottom:4px;">Marcus Williams</h3>
+              <div class="flex items-center justify-between" style="margin-bottom:var(--space-2);">
+                <h3 class="text-xl" style="font-family:var(--font-serif);margin:0;">Marcus Williams</h3>
+                <span class="badge-brass" style="font-size:11px;">8 Yrs Exp</span>
+              </div>
               <p class="text-brass text-xs font-bold tracking-wider uppercase" style="margin-bottom:var(--space-3);">Senior Installation Specialist</p>
-              <p class="text-sm text-secondary" style="line-height:1.7;">8 years experience. Electrical integration, TV mounting, and smart home setup expert.</p>
+              <p class="text-sm text-secondary" style="line-height:1.7;margin-bottom:var(--space-4);">Electrical integration engineer and TV wall mounting expert. Specialist in concealed cable routing, plasterboard anchors, and smart home AV setups.</p>
+              <div class="team-skills">
+                <span class="skill-tag">TV Wall Mounting</span>
+                <span class="skill-tag">Cable Concealment</span>
+                <span class="skill-tag">Smart Home AV</span>
+              </div>
             </div>
           </div>
+
           <div class="team-card" data-reveal="up" data-delay="200">
-            <div class="team-avatar" style="background:linear-gradient(135deg,var(--walnut),#4a2e1e);">L</div>
+            <div class="team-image-wrap">
+              <img src="images/team-layla.jpg" alt="Layla Hassan — Kitchen Fitting Lead" loading="lazy">
+            </div>
             <div class="team-body">
-              <h3 class="text-xl" style="font-family:var(--font-serif);margin-bottom:4px;">Layla Hassan</h3>
+              <div class="flex items-center justify-between" style="margin-bottom:var(--space-2);">
+                <h3 class="text-xl" style="font-family:var(--font-serif);margin:0;">Layla Hassan</h3>
+                <span class="badge-brass" style="font-size:11px;">10 Yrs Exp</span>
+              </div>
               <p class="text-brass text-xs font-bold tracking-wider uppercase" style="margin-bottom:var(--space-3);">Kitchen Fitting Lead</p>
-              <p class="text-sm text-secondary" style="line-height:1.7;">10 years experience. Modular kitchen systems, worktop installation, and plinth finishing.</p>
+              <p class="text-sm text-secondary" style="line-height:1.7;margin-bottom:var(--space-4);">Lead installer for modular kitchen systems, worktop jointing, appliance integration, and plinth finishing with millimeter-level precision calibration.</p>
+              <div class="team-skills">
+                <span class="skill-tag">Modular Kitchens</span>
+                <span class="skill-tag">Worktop Scribing</span>
+                <span class="skill-tag">Appliance Fitting</span>
+              </div>
             </div>
           </div>
         </div>
