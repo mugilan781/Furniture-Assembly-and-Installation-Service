@@ -24,8 +24,7 @@
     .article-sidebar { position:sticky; top:calc(var(--navbar-h-scroll) + var(--space-6)); }
     .sidebar-card { background:var(--bg-secondary); border-radius:var(--radius-xl); padding:var(--space-6); border:1px solid var(--border); margin-bottom:var(--space-5); }
     [data-theme="dark"] .sidebar-card { background:var(--bg-tertiary); }
-    .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-5); }
-    .share-strip { display:flex; align-items:center; gap:var(--space-4); padding:var(--space-5) 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); flex-wrap:wrap; }
+    .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-5); }    .share-strip { display:flex; align-items:center; gap:var(--space-4); padding:var(--space-5) 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); flex-wrap:wrap; }
     .comment-list { display:flex; flex-direction:column; gap:var(--space-5); }
     .comment-item { padding:var(--space-6); border:1px solid var(--border); border-radius:var(--radius-lg); background:var(--bg-primary); }
     [data-theme="dark"] .comment-item { background:var(--bg-secondary); }
@@ -33,6 +32,7 @@
     .article-hero-content .breadcrumb { justify-content:center; }
     .article-hero-content h1 { margin-left:auto; margin-right:auto; }
     .article-hero-content .flex.items-center { justify-content:center; }
+    html { scroll-padding-top: calc(var(--navbar-h-scroll) + 24px); }
     @media(max-width:1024px){ .article-layout { grid-template-columns:1fr; } .article-sidebar { position:static; } .related-grid { grid-template-columns:1fr; } }
     @media(max-width:640px){ .related-grid { grid-template-columns:1fr; } }
   </style>
@@ -57,18 +57,18 @@
   <main>
     <!-- SECTION 1: ARTICLE HERO -->
     <section class="article-hero" aria-labelledby="article-title">
-      <div class="article-hero-img"></div>
+      <div class="article-hero-img" id="article-hero-img"></div>
       <div class="article-hero-overlay"></div>
       <div class="article-hero-content">
         <nav class="breadcrumb" style="margin-bottom:var(--space-5);" aria-label="Breadcrumb"><a href="index.html" style="color:rgba(247,243,235,0.6);">Home</a><div class="breadcrumb-sep" style="background:rgba(247,243,235,0.3);"></div><a href="blog.html" style="color:rgba(247,243,235,0.6);">Blog</a><div class="breadcrumb-sep" style="background:rgba(247,243,235,0.3);"></div><span class="breadcrumb-current">Article</span></nav>
-        <div class="badge badge-brass" style="margin-bottom:var(--space-5);">Assembly Guide</div>
+        <div class="badge badge-brass" id="article-badge" style="margin-bottom:var(--space-5);">Assembly Guide</div>
         <h1 id="article-title" class="text-6xl text-inverse tracking-tight" style="max-width:780px;margin-bottom:var(--space-6);" data-reveal="up">The Complete Guide to Furniture Assembly: What Professionals Know That You Don't</h1>
         <div class="flex items-center gap-6" style="flex-wrap:wrap;" data-reveal="up" data-delay="150">
           <div style="display:flex;align-items:center;gap:var(--space-3);">
-            <div class="author-avatar-placeholder" style="width:44px;height:44px;font-size:1.2rem;">T</div>
-            <div><div style="color:var(--ivory);font-weight:700;font-size:var(--text-sm);">Thomas Reid</div><div style="color:rgba(247,243,235,0.5);font-size:var(--text-xs);">Founder & Lead Installer</div></div>
+            <div class="author-avatar-placeholder" id="article-author-avatar" style="width:44px;height:44px;font-size:1.2rem;">T</div>
+            <div><div id="article-author-name" style="color:var(--ivory);font-weight:700;font-size:var(--text-sm);">Thomas Reid</div><div id="article-author-role" style="color:rgba(247,243,235,0.5);font-size:var(--text-xs);">Founder & Lead Installer</div></div>
           </div>
-          <div class="blog-meta" style="color:rgba(247,243,235,0.55);">
+          <div class="blog-meta" id="article-meta" style="color:rgba(247,243,235,0.55);">
             <span>August 15, 2026</span><div class="blog-meta-dot" style="background:rgba(247,243,235,0.3);"></div>
             <span>12 min read</span><div class="blog-meta-dot" style="background:rgba(247,243,235,0.3);"></div>
             <span>2,847 views</span>
@@ -82,7 +82,7 @@
       <div class="container">
         <div class="article-layout">
           <!-- Main Content -->
-          <article class="article-body" data-reveal="up">
+          <article class="article-body" id="article-body" data-reveal="up">
             <p><strong>Every year, thousands of homeowners attempt to assemble their own furniture</strong> — and thousands of those end up with wonky wardrobes, stripped cam bolts, or worse, unstable beds that collapse weeks later. As professional installers with over a decade of experience, we've seen it all. This guide shares the knowledge that separates a £45/hr professional from a well-meaning DIYer.</p>
 
             <h2>Understanding Flat-Pack Assembly Systems</h2>
@@ -136,7 +136,7 @@
               <a href="#" class="btn btn-sm btn-secondary" style="gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
               <a href="#" class="btn btn-sm btn-secondary" style="gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>Twitter</a>
               <a href="#" class="btn btn-sm btn-secondary" style="gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
-              <div style="margin-left:auto;display:flex;gap:var(--space-2);flex-wrap:wrap;">
+              <div style="margin-left:auto;display:flex;gap:var(--space-2);flex-wrap:wrap;" id="article-tags">
                 <span class="badge badge-brass">Assembly</span>
                 <span class="badge badge-olive">Flat-Pack</span>
                 <span class="badge badge-brass">Professional Tips</span>
@@ -149,20 +149,20 @@
             <!-- Author Card -->
             <div class="sidebar-card" data-reveal="right">
               <div style="display:flex;align-items:center;gap:var(--space-4);margin-bottom:var(--space-4);">
-                <div class="author-avatar-placeholder" style="width:52px;height:52px;font-size:1.4rem;flex-shrink:0;">T</div>
+                <div class="author-avatar-placeholder" id="sidebar-author-avatar" style="width:52px;height:52px;font-size:1.4rem;flex-shrink:0;">T</div>
                 <div>
-                  <div class="font-bold">Thomas Reid</div>
-                  <div class="text-xs text-muted">Founder & Lead Installer</div>
+                  <div class="font-bold" id="sidebar-author-name">Thomas Reid</div>
+                  <div class="text-xs text-muted" id="sidebar-author-role">Founder & Lead Installer</div>
                 </div>
               </div>
-              <p class="text-sm text-secondary" style="line-height:1.7;margin-bottom:var(--space-4);">12 years in the furniture installation industry. Trained carpenter, kitchen fitting specialist, and author of 24 guides.</p>
+              <p class="text-sm text-secondary" id="sidebar-author-bio" style="line-height:1.7;margin-bottom:var(--space-4);">12 years in the furniture installation industry. Trained carpenter, kitchen fitting specialist, and author of 24 guides.</p>
               <a href="about.html" class="btn btn-sm btn-outline-brass" style="width:100%;justify-content:center;">View Profile</a>
             </div>
 
             <!-- Table of Contents -->
             <div class="sidebar-card" data-reveal="right" data-delay="100">
               <h3 class="text-sm font-bold tracking-wider uppercase text-muted" style="margin-bottom:var(--space-4);">In This Article</h3>
-              <div style="display:flex;flex-direction:column;gap:var(--space-3);">
+              <div id="article-toc" style="display:flex;flex-direction:column;gap:var(--space-3);">
                 <a href="#" class="text-sm text-secondary" style="display:flex;gap:var(--space-2);align-items:flex-start;transition:color 0.2s;" onmouseenter="this.style.color='var(--brass)'" onmouseleave="this.style.color=''"><span style="color:var(--brass);font-weight:700;flex-shrink:0;">01</span> Understanding Assembly Systems</a>
                 <a href="#" class="text-sm text-secondary" style="display:flex;gap:var(--space-2);align-items:flex-start;transition:color 0.2s;" onmouseenter="this.style.color='var(--brass)'" onmouseleave="this.style.color=''"><span style="color:var(--brass);font-weight:700;flex-shrink:0;">02</span> Pre-Assembly Checklist</a>
                 <a href="#" class="text-sm text-secondary" style="display:flex;gap:var(--space-2);align-items:flex-start;transition:color 0.2s;" onmouseenter="this.style.color='var(--brass)'" onmouseleave="this.style.color=''"><span style="color:var(--brass);font-weight:700;flex-shrink:0;">03</span> Common Mistakes</a>
@@ -182,14 +182,14 @@
     </section>
 
     <!-- SECTION 3: AUTHOR BIO CARD -->
-    <section class="section-sm bg-secondary" aria-labelledby="author-section">
+    <section class="section-sm bg-secondary" aria-labelledby="author-bio-name">
       <div class="container" style="max-width:860px;">
         <div style="display:flex;gap:var(--space-8);align-items:flex-start;background:var(--bg-primary);border:1px solid var(--border);border-radius:var(--radius-2xl);padding:var(--space-8);flex-wrap:wrap;" data-reveal="up">
-          <div class="author-avatar-placeholder" style="width:72px;height:72px;font-size:2rem;flex-shrink:0;">T</div>
+          <div class="author-avatar-placeholder" id="author-bio-avatar" style="width:72px;height:72px;font-size:2rem;flex-shrink:0;">T</div>
           <div style="flex:1;min-width:200px;">
             <div class="section-label" style="margin-bottom:var(--space-2);">Written by</div>
-            <h3 id="author-section" class="text-2xl" style="font-family:var(--font-serif);margin-bottom:var(--space-3);">Thomas Reid</h3>
-            <p class="text-secondary text-sm" style="line-height:1.8;margin-bottom:var(--space-5);">Thomas is the founder of ASSEMBLIO and has been in the furniture installation industry since 2012. A trained carpenter with an eye for architectural detail, he leads our team and writes in-depth guides to help homeowners get the most out of their spaces.</p>
+            <h3 class="text-2xl" id="author-bio-name" style="font-family:var(--font-serif);margin-bottom:var(--space-3);">Thomas Reid</h3>
+            <p class="text-secondary text-sm" id="author-bio-text" style="line-height:1.8;margin-bottom:var(--space-5);">Thomas is the founder of ASSEMBLIO and has been in the furniture installation industry since 2012. A trained carpenter with an eye for architectural detail, he leads our team and writes in-depth guides to help homeowners get the most out of their spaces.</p>
             <div style="display:flex;gap:var(--space-3);">
               <a href="about.html" class="btn btn-sm btn-outline-brass">Read Bio</a>
               <a href="blog.html" class="btn btn-sm btn-secondary">More Articles</a>
@@ -204,7 +204,7 @@
       <div class="container">
         <div class="section-label" style="margin-bottom:var(--space-5);" data-reveal="left">Keep Reading</div>
         <h2 id="related-heading" class="text-3xl" style="margin-bottom:var(--space-8);" data-reveal="up">Related Articles</h2>
-        <div class="related-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5);" data-stagger-grid>
+        <div class="related-grid" id="related-grid" data-stagger-grid>
           <a href="blog-details.html" class="blog-card" style="text-decoration:none;" data-reveal="up">
             <div class="blog-card-image img-zoom-wrap"><img src="images/service-tv.jpg" alt="TV mounting guide" loading="lazy"></div>
             <div class="blog-card-body"><p class="blog-category">TV Mounting</p><h3 class="blog-title">The Ultimate Guide to Choosing a TV Wall Mount</h3><div class="blog-meta"><span>Aug 3, 2026</span><div class="blog-meta-dot"></div><span>7 min</span></div></div>
@@ -284,7 +284,7 @@
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6);padding:var(--space-8) 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);" data-reveal="up">
           <div>
             <p class="text-xs font-bold tracking-widest uppercase text-muted" style="margin-bottom:var(--space-3);">Topics</p>
-            <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;">
+            <div id="topics-badges" style="display:flex;gap:var(--space-2);flex-wrap:wrap;">
               <a href="#" class="badge badge-brass">Assembly</a>
               <a href="#" class="badge badge-olive">Flat-Pack</a>
               <a href="#" class="badge badge-brass">IKEA</a>
@@ -382,6 +382,76 @@
   </footer>
 
   <button id="scroll-top" class="scroll-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
-  <script src="js/main.js"></script><script src="js/animations.js"></script><script src="js/forms.js"></script>
+  <script src="js/blog-data.js"></script><script src="js/main.js"></script><script src="js/animations.js"></script><script src="js/forms.js"></script>
+  <script>
+  (function () {
+    'use strict';
+    if (typeof BLOG_POSTS === 'undefined') return;
+    var params = new URLSearchParams(window.location.search);
+    var post = getPost(parseInt(params.get('id'), 10));
+    var author = BLOG_AUTHORS[post.author];
+
+    document.title = post.title + ' — ASSEMBLIO Blog';
+    var desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute('content', post.description);
+
+    document.getElementById('article-hero-img').style.backgroundImage = "url('" + post.image + "')";
+    document.getElementById('article-badge').textContent = post.category;
+    document.getElementById('article-title').textContent = post.title;
+    document.getElementById('article-author-avatar').textContent = author.avatar;
+    document.getElementById('article-author-name').textContent = author.name;
+    document.getElementById('article-author-role').textContent = author.role;
+    document.getElementById('article-meta').innerHTML = '<span>' + post.date + '</span><div class="blog-meta-dot" style="background:rgba(247,243,235,0.3);"></div><span>' + post.readTime + '</span><div class="blog-meta-dot" style="background:rgba(247,243,235,0.3);"></div><span>' + post.views + '</span>';
+
+    var body = document.getElementById('article-body');
+    body.innerHTML = post.content +
+      '<div class="share-strip" style="margin-top:var(--space-10);">' +
+      '<span class="text-sm font-semibold text-muted">Share:</span>' +
+      '<a href="#" class="btn btn-sm btn-secondary" style="gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>' +
+      '<a href="#" class="btn btn-sm btn-secondary" style="gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>Twitter</a>' +
+      '<a href="#" class="btn btn-sm btn-secondary" style="gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>' +
+      '<div style="margin-left:auto;display:flex;gap:var(--space-2);flex-wrap:wrap;" id="article-tags"></div></div>';
+
+    document.getElementById('article-tags').innerHTML = post.tags.map(function (t, i) {
+      return '<span class="badge ' + (i % 2 === 0 ? 'badge-brass' : 'badge-olive') + '">' + t + '</span>';
+    }).join('');
+
+    document.getElementById('sidebar-author-avatar').textContent = author.avatar;
+    document.getElementById('sidebar-author-name').textContent = author.name;
+    document.getElementById('sidebar-author-role').textContent = author.role;
+    document.getElementById('sidebar-author-bio').textContent = author.short;
+
+    document.getElementById('author-bio-avatar').textContent = author.avatar;
+    document.getElementById('author-bio-name').textContent = author.name;
+    document.getElementById('author-bio-text').textContent = author.bio;
+
+    var headings = Array.from(body.querySelectorAll('h2'));
+    var toc = document.getElementById('article-toc');
+    toc.innerHTML = '';
+    headings.forEach(function (h, i) {
+      var num = String(i + 1).padStart(2, '0');
+      h.id = 'article-sec-' + (i + 1);
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.className = 'text-sm text-secondary';
+      a.style.cssText = 'display:flex;gap:var(--space-2);align-items:flex-start;transition:color 0.2s;';
+      a.innerHTML = '<span style="color:var(--brass);font-weight:700;flex-shrink:0;">' + num + '</span> <span>' + h.textContent + '</span>';
+      toc.appendChild(a);
+    });
+
+    document.getElementById('topics-badges').innerHTML = post.topics.map(function (t, i) {
+      return '<a href="blog.html" class="badge ' + (i % 2 === 0 ? 'badge-brass' : 'badge-olive') + '">' + t + '</a>';
+    }).join('');
+
+    document.getElementById('related-grid').innerHTML = post.related.map(function (rid) {
+      var p = getPost(rid);
+      var date = p.date.replace('August', 'Aug').replace('July', 'Jul');
+      return '<a href="blog-details.html?id=' + p.id + '" class="blog-card" style="text-decoration:none;">' +
+        '<div class="blog-card-image img-zoom-wrap"><img src="' + p.image + '" alt="' + p.title + '" loading="lazy"></div>' +
+        '<div class="blog-card-body"><p class="blog-category">' + p.category + '</p><h3 class="blog-title">' + p.title + '</h3>' +
+        '<div class="blog-meta"><span>' + date + '</span><div class="blog-meta-dot"></div><span>' + p.readTime.replace(' min read', ' min') + '</span></div></div></a>';
+    }).join('');
+  })();
+  </script>
 </body>
 </html>
