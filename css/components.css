@@ -809,6 +809,8 @@
   transition: all 0.35s var(--ease-smooth);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 [data-theme="dark"] .pricing-card { background: var(--bg-secondary); }
@@ -909,6 +911,8 @@
   color: var(--brass);
   flex-shrink: 0;
 }
+
+.pricing-card .btn { margin-top: auto; }
 
 /* ─── FORMS ─── */
 .form-group {
