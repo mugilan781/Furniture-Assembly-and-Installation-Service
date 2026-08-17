@@ -265,16 +265,19 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
   if (!cards.length) return;
 
   let index = 0;
-  const gap = () => parseFloat(getComputedStyle(track).gap) || 24;
 
   function update() {
+    const gap = parseFloat(getComputedStyle(track).gap) || 24;
     const cardWidth = cards[0].getBoundingClientRect().width;
-    const step = cardWidth + gap();
-    const perView = Math.max(1, Math.floor((outer.clientWidth + gap()) / step));
+    if (!cardWidth) return;
+    const step = cardWidth + gap;
+    const outerWidth = outer.clientWidth;
+    const perView = Math.max(1, Math.round((outerWidth + gap) / step));
     const maxIndex = Math.max(0, cards.length - perView);
+
     index = Math.min(Math.max(index, 0), maxIndex);
     track.style.transform = `translateX(-${index * step}px)`;
-    prevBtn.disabled = index === 0;
+    prevBtn.disabled = index <= 0;
     nextBtn.disabled = index >= maxIndex;
   }
 
@@ -284,7 +287,7 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
   let resizeTimer;
   on(window, 'resize', () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(update, 150);
+    resizeTimer = setTimeout(update, 100);
   });
 
   update();

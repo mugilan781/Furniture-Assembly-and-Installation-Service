@@ -602,6 +602,10 @@
   position: relative;
   transition: all 0.35s var(--ease-smooth);
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 [data-theme="dark"] .testimonial-card { background: var(--bg-secondary); }
@@ -642,12 +646,14 @@
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: var(--space-6);
+  flex: 1;
 }
 
 .testimonial-author {
   display: flex;
   align-items: center;
   gap: var(--space-4);
+  margin-top: auto;
 }
 
 .author-avatar {

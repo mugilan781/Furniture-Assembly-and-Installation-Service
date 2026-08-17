@@ -114,18 +114,20 @@
     /* Testimonials Slider */
     .testimonials-track-outer {
       overflow: hidden;
+      width: 100%;
+      border-radius: var(--radius-xl);
     }
 
     .testimonials-track {
       display: flex;
-      gap: var(--space-5);
-      width: max-content;
-      padding-bottom: var(--space-4);
-      transition: transform 0.6s var(--ease-smooth);
+      gap: var(--space-6);
+      align-items: stretch;
+      transition: transform 0.5s var(--ease-smooth);
     }
 
     .testimonials-track .testimonial-card {
-      width: 380px;
+      width: calc((100% - 2 * var(--space-6)) / 3);
+      flex-shrink: 0;
     }
 
     .slider-arrow:disabled {
@@ -149,7 +151,7 @@
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .gallery-masonry { grid-template-columns: 1fr 1fr; }
       .gallery-item:nth-child(1) { grid-row: span 1; aspect-ratio: 4/3; }
-      .testimonials-track .testimonial-card { width: 300px; }
+      .testimonials-track .testimonial-card { width: calc((100% - var(--space-6)) / 2); }
     }
 
     @media (max-width: 480px) {
@@ -489,18 +491,41 @@
          SECTION 6: TESTIMONIALS
     ═══════════════════════════════════════════════ -->
     <section class="section bg-secondary" aria-labelledby="testimonials-heading">
-      <div class="container-fluid">
-        <div class="container" style="padding-bottom:var(--space-10);">
-          <div class="flex items-end justify-between" style="flex-wrap:wrap;gap:var(--space-5);">
-            <div>
-              <div class="section-label" data-reveal="left">Client Reviews</div>
-              <h2 id="testimonials-heading" class="text-4xl" data-reveal="up" data-delay="100">
-                What Our Clients Say
-              </h2>
+      <div class="container">
+        <div class="flex items-end justify-between" style="flex-wrap:wrap;gap:var(--space-5);margin-bottom:var(--space-10);">
+          <div>
+            <div class="section-label" data-reveal="left">Client Reviews</div>
+            <h2 id="testimonials-heading" class="text-4xl" data-reveal="up" data-delay="100">
+              What Our Clients Say
+            </h2>
+          </div>
+          <div class="flex gap-4 items-center" data-reveal="right" style="flex-wrap:wrap;">
+            <div class="stat-number" style="flex-direction:column;align-items:flex-end;">
+              <span style="font-family:var(--font-serif);font-size:var(--text-4xl);color:var(--brass);line-height:1;">4.9</span>
+              <div class="stars" style="margin-bottom:2px;">
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p style="font-size:var(--text-xs);color:var(--text-muted);">2,400+ Reviews</p>
             </div>
-            <div class="flex gap-3" data-reveal="right">
-              <div class="stat-number" style="flex-direction:column;align-items:flex-end;">
-                <span style="font-family:var(--font-serif);font-size:var(--text-4xl);color:var(--brass);">4.9</span>
+            <div class="flex gap-2" style="align-items:center;">
+              <button class="slider-arrow" id="testi-prev" aria-label="Previous testimonials" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="slider-arrow" id="testi-next" aria-label="Next testimonials">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-track-outer" id="testimonials-scroll" role="region" aria-label="Customer testimonials" data-reveal="up" data-delay="200">
+          <div class="testimonials-track">
+            <article class="testimonial-card">
+              <div style="display:flex;flex-direction:column;flex:1;">
                 <div class="stars">
                   <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -508,31 +533,8 @@
                   <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
-                <p style="font-size:var(--text-xs);color:var(--text-muted);">2,400+ Reviews</p>
+                <p class="testimonial-text">"Absolutely outstanding service. The team assembled our entire IKEA PAX wardrobe system in 4 hours — perfectly level, not a single scratch. We've used ASSEMBLIO twice now and won't use anyone else."</p>
               </div>
-              <div class="flex gap-2" style="align-items:flex-end;">
-                <button class="slider-arrow" id="testi-prev" aria-label="Previous testimonials" disabled>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <button class="slider-arrow" id="testi-next" aria-label="Next testimonials">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonials-track-outer" id="testimonials-scroll" role="region" aria-label="Customer testimonials">
-          <div class="testimonials-track" style="padding-left:var(--space-6);padding-right:var(--space-6);">
-            <article class="testimonial-card">
-              <div class="stars">
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-              <p class="testimonial-text">"Absolutely outstanding service. The team assembled our entire IKEA PAX wardrobe system in 4 hours — perfectly level, not a single scratch. We've used ASSEMBLIO twice now and won't use anyone else."</p>
               <div class="testimonial-author">
                 <div class="author-avatar-placeholder">S</div>
                 <div>
@@ -543,14 +545,16 @@
             </article>
 
             <article class="testimonial-card">
-              <div class="stars">
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <div style="display:flex;flex-direction:column;flex:1;">
+                <div class="stars">
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <p class="testimonial-text">"Had a 75" TV mounted on a challenging plasterboard wall. The cable management is invisible — exactly what we wanted. The team arrived on time, were impeccably professional, and left no mess whatsoever."</p>
               </div>
-              <p class="testimonial-text">"Had a 75" TV mounted on a challenging plasterboard wall. The cable management is invisible — exactly what we wanted. The team arrived on time, were impeccably professional, and left no mess whatsoever."</p>
               <div class="testimonial-author">
                 <div class="author-avatar-placeholder">J</div>
                 <div>
@@ -561,14 +565,16 @@
             </article>
 
             <article class="testimonial-card">
-              <div class="stars">
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <div style="display:flex;flex-direction:column;flex:1;">
+                <div class="stars">
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <p class="testimonial-text">"The kitchen fitting was flawless. Every cabinet is perfectly level, every gap is sealed. They even noticed a faulty hinge in one of the units and replaced it on the spot. Total professionals."</p>
               </div>
-              <p class="testimonial-text">"The kitchen fitting was flawless. Every cabinet is perfectly level, every gap is sealed. They even noticed a faulty hinge in one of the units and replaced it on the spot. Total professionals."</p>
               <div class="testimonial-author">
                 <div class="author-avatar-placeholder">A</div>
                 <div>
@@ -579,14 +585,16 @@
             </article>
 
             <article class="testimonial-card">
-              <div class="stars">
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <div style="display:flex;flex-direction:column;flex:1;">
+                <div class="stars">
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <p class="testimonial-text">"Booked for floating shelves in our alcove and couldn't be happier. They're level, solid, and beautifully finished. The team even suggested a better layout than I'd originally planned — great design sense."</p>
               </div>
-              <p class="testimonial-text">"Booked for floating shelves in our alcove and couldn't be happier. They're level, solid, and beautifully finished. The team even suggested a better layout than I'd originally planned — great design sense."</p>
               <div class="testimonial-author">
                 <div class="author-avatar-placeholder">T</div>
                 <div>
