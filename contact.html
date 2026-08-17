@@ -13,22 +13,20 @@
     .contact-hero-bg { position:absolute; inset:0; background-image:url('images/hero1.jpg'); background-size:cover; background-position:center; opacity:0.2; }
     .contact-hero-content { position:relative; z-index:2; width:100%; max-width:var(--container-max); margin:0 auto; padding:var(--space-32) var(--space-6) var(--space-12); }
     .contact-layout { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-12); align-items:start; }
-    .contact-info-card { background:var(--graphite); border-radius:var(--radius-2xl); padding:var(--space-10); }
+    .contact-form-card { background:var(--bg-secondary); border:1px solid var(--border); border-radius:var(--radius-2xl); padding:var(--space-10); }
+    [data-theme="dark"] .contact-form-card { background:var(--bg-secondary); border-color:rgba(247,243,235,0.10); }
+    .contact-info-card { background:var(--graphite); border-radius:var(--radius-2xl); padding:var(--space-10); border:1px solid rgba(176,141,87,0.25); box-shadow:0 20px 50px rgba(32,33,36,0.18); }
     .contact-info-item { display:flex; gap:var(--space-5); align-items:flex-start; padding:var(--space-5) 0; border-bottom:1px solid rgba(247,243,235,0.1); }
     .contact-info-item:last-child { border-bottom:none; }
     .contact-info-icon { width:48px; height:48px; border-radius:var(--radius-md); background:rgba(176,141,87,0.15); border:1px solid rgba(176,141,87,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
     .contact-info-icon svg { width:22px; height:22px; color:var(--brass); }
     .map-embed { border-radius:var(--radius-2xl); overflow:hidden; height:400px; background:var(--bg-tertiary); display:flex; align-items:center; justify-content:center; border:1px solid var(--border); position:relative; }
     .map-placeholder { text-align:center; }
-    .service-area-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-4); }
-    .area-pill { text-align:center; padding:var(--space-4); border:1px solid var(--border); border-radius:var(--radius-lg); font-size:var(--text-sm); font-weight:600; transition:all 0.25s; }
-    .area-pill:hover { border-color:rgba(176,141,87,0.4); background:rgba(176,141,87,0.05); }
     .contact-hero-content { text-align:center; }
     .contact-hero-content .breadcrumb { justify-content:center; }
     .contact-hero-content .section-label { justify-content:center; }
     .contact-hero-content h1,.contact-hero-content p { margin-left:auto; margin-right:auto; }
-    @media(max-width:1024px){ .contact-layout { grid-template-columns:1fr; } .service-area-grid { grid-template-columns:repeat(2,1fr); } }
-    @media(max-width:480px){ .service-area-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:1024px){ .contact-layout { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -66,8 +64,9 @@
         <div class="contact-layout">
           <!-- Form -->
           <div data-reveal="left">
-            <div class="section-label" style="margin-bottom:var(--space-5);">Send a Message</div>
-            <h2 id="contact-form-heading" class="text-4xl" style="margin-bottom:var(--space-8);">Book Your Service<br>or Request a Quote</h2>
+            <div class="contact-form-card">
+              <div class="section-label" style="margin-bottom:var(--space-5);">Send a Message</div>
+              <h2 id="contact-form-heading" class="text-4xl" style="margin-bottom:var(--space-8);">Book Your Service<br>or Request a Quote</h2>
             <form data-contact-form style="display:flex;flex-direction:column;gap:var(--space-4);" novalidate>
               <div class="form-row">
                 <div class="form-group">
@@ -120,6 +119,7 @@
               </button>
               <p class="text-xs text-muted" style="margin-top:var(--space-2);">We respond within 2 hours during business hours. By submitting, you agree to our <a href="privacy-policy.html" class="text-brass">Privacy Policy</a>.</p>
             </form>
+            </div>
           </div>
 
           <!-- Info -->
@@ -187,29 +187,7 @@
       </div>
     </section>
 
-    <!-- SECTION 4: SERVICE AREAS -->
-    <section class="section bg-primary" aria-labelledby="areas-heading">
-      <div class="container">
-        <div class="text-center" style="margin-bottom:var(--space-10);">
-          <div class="section-label" style="justify-content:center;" data-reveal="up">Where We Work</div>
-          <h2 id="areas-heading" class="text-4xl" data-reveal="up" data-delay="100">Service Areas</h2>
-          <p class="text-secondary" style="margin-top:var(--space-3);" data-reveal="up" data-delay="200">We cover all London boroughs and surrounding counties.</p>
-        </div>
-        <div class="service-area-grid" data-stagger-grid>
-          <div class="area-pill" data-reveal="up">Central London</div>
-          <div class="area-pill" data-reveal="up" data-delay="50">East London</div>
-          <div class="area-pill" data-reveal="up" data-delay="100">West London</div>
-          <div class="area-pill" data-reveal="up" data-delay="150">North London</div>
-          <div class="area-pill" data-reveal="up" data-delay="200">South London</div>
-          <div class="area-pill" data-reveal="up" data-delay="250">Surrey</div>
-          <div class="area-pill" data-reveal="up" data-delay="300">Essex</div>
-          <div class="area-pill" data-reveal="up" data-delay="350">Hertfordshire</div>
-          <div class="area-pill" data-reveal="up" data-delay="400">Kent</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 5: QUICK CONTACT METHODS -->
+    <!-- SECTION 4: QUICK CONTACT METHODS -->
     <section class="section bg-secondary" aria-labelledby="quick-contact-heading">
       <div class="container">
         <div class="text-center" style="margin-bottom:var(--space-10);">
@@ -239,7 +217,7 @@
       </div>
     </section>
 
-    <!-- SECTION 6: TRUST INDICATORS -->
+    <!-- SECTION 5: TRUST INDICATORS -->
     <section class="section bg-primary" aria-labelledby="trust-heading">
       <div class="container">
         <div class="text-center" style="margin-bottom:var(--space-10);">
@@ -247,19 +225,19 @@
           <h2 id="trust-heading" class="text-4xl" data-reveal="up" data-delay="100">Book with Confidence</h2>
         </div>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5);" data-stagger-grid>
-          <div style="text-align:center;padding:var(--space-6);" data-reveal="up">
+          <div class="service-card" style="text-align:center;" data-reveal="up">
             <div style="font-family:var(--font-serif);font-size:3rem;color:var(--brass);margin-bottom:var(--space-2);">5,000+</div>
             <p class="text-sm text-secondary">Homes Served</p>
           </div>
-          <div style="text-align:center;padding:var(--space-6);" data-reveal="up" data-delay="80">
+          <div class="service-card" style="text-align:center;" data-reveal="up" data-delay="80">
             <div style="font-family:var(--font-serif);font-size:3rem;color:var(--brass);margin-bottom:var(--space-2);">4.9</div>
             <p class="text-sm text-secondary">Star Average Rating</p>
           </div>
-          <div style="text-align:center;padding:var(--space-6);" data-reveal="up" data-delay="160">
+          <div class="service-card" style="text-align:center;" data-reveal="up" data-delay="160">
             <div style="font-family:var(--font-serif);font-size:3rem;color:var(--brass);margin-bottom:var(--space-2);">2hr</div>
             <p class="text-sm text-secondary">Response Guarantee</p>
           </div>
-          <div style="text-align:center;padding:var(--space-6);" data-reveal="up" data-delay="240">
+          <div class="service-card" style="text-align:center;" data-reveal="up" data-delay="240">
             <div style="font-family:var(--font-serif);font-size:3rem;color:var(--brass);margin-bottom:var(--space-2);">£2M</div>
             <p class="text-sm text-secondary">Public Liability Cover</p>
           </div>
