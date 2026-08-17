@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ASSEMBLIO Terms & Conditions — Our service terms, booking conditions, and liability information.">
+  <title>Terms & Conditions — ASSEMBLIO</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .legal-hero { padding-top:calc(var(--navbar-h) + var(--space-16)); padding-bottom:var(--space-12); background:var(--bg-secondary); }
+    .legal-layout { display:grid; grid-template-columns:240px 1fr; gap:var(--space-12); align-items:start; }
+    .legal-sidebar { position:sticky; top:calc(var(--navbar-h-scroll) + var(--space-6)); }
+    .legal-toc { background:var(--bg-secondary); border-radius:var(--radius-xl); padding:var(--space-6); border:1px solid var(--border); }
+    [data-theme="dark"] .legal-toc { background:var(--bg-tertiary); }
+    .toc-link { display:block; padding:var(--space-3) var(--space-4); font-size:var(--text-sm); color:var(--text-secondary); border-radius:var(--radius-md); text-decoration:none; transition:all 0.2s; border-left:2px solid transparent; }
+    .toc-link:hover,.toc-link.active { color:var(--brass); border-left-color:var(--brass); background:rgba(176,141,87,0.05); }
+    .legal-content h2 { font-family:var(--font-serif); font-size:var(--text-2xl); margin:var(--space-10) 0 var(--space-5); padding-top:var(--space-6); border-top:1px solid var(--border); color:var(--text-primary); }
+    .legal-content h2:first-child { border-top:none; margin-top:0; padding-top:0; }
+    .legal-content p,.legal-content li { font-size:var(--text-base); line-height:1.9; color:var(--text-secondary); margin-bottom:var(--space-4); }
+    .legal-content ul { padding-left:var(--space-6); display:flex; flex-direction:column; gap:var(--space-2); }
+    .legal-content li { list-style:disc; }
+    .legal-content a { color:var(--brass); text-decoration:underline; }
+    .legal-highlight { background:rgba(176,141,87,0.07); border:1px solid rgba(176,141,87,0.15); border-radius:var(--radius-lg); padding:var(--space-5) var(--space-6); margin:var(--space-6) 0; }
+    @media(max-width:1024px){ .legal-layout { grid-template-columns:1fr; } .legal-sidebar { position:static; } }
+  </style>
+</head>
+<body>
+  <div id="page-loader" class="page-loader" aria-hidden="true"><div class="loader-logo"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+
+  <nav id="navbar" class="navbar scrolled" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a>
+      <ul class="nav-links"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="services.html" class="nav-link">Services</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul>
+      <div class="nav-actions"><button class="nav-icon-btn" data-theme-toggle aria-label="Toggle dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></button><a href="contact.html" class="btn btn-primary btn-sm">Book Now</a></div>
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-header"><a href="index.html" class="navbar-logo"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a><button id="mobile-menu-close" class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <nav class="mobile-nav-links"><a href="index.html" class="mobile-nav-link">Home <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="contact.html" class="mobile-nav-link">Contact <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></nav>
+    <div class="mobile-menu-footer"><a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book Now</a></div>
+  </div>
+
+  <main>
+    <div class="legal-hero">
+      <div class="container">
+        <nav class="breadcrumb" style="margin-bottom:var(--space-6);" aria-label="Breadcrumb"><a href="index.html">Home</a><div class="breadcrumb-sep"></div><span class="breadcrumb-current">Terms & Conditions</span></nav>
+        <h1 class="text-5xl" style="margin-bottom:var(--space-4);" data-reveal="up">Terms & Conditions</h1>
+        <p class="text-secondary" data-reveal="up" data-delay="100">Last updated: <strong>1 August 2026</strong>. Governing law: <strong>England & Wales</strong>.</p>
+      </div>
+    </div>
+
+    <section class="section bg-primary">
+      <div class="container">
+        <div class="legal-layout">
+          <aside class="legal-sidebar" aria-label="Table of Contents">
+            <div class="legal-toc">
+              <p class="text-xs font-bold tracking-widest uppercase text-muted" style="margin-bottom:var(--space-4);">Contents</p>
+              <a href="#agreement" class="toc-link">Agreement to Terms</a>
+              <a href="#services" class="toc-link">Our Services</a>
+              <a href="#booking" class="toc-link">Booking & Payment</a>
+              <a href="#cancellation" class="toc-link">Cancellation Policy</a>
+              <a href="#liability" class="toc-link">Liability</a>
+              <a href="#guarantee" class="toc-link">Our Guarantee</a>
+              <a href="#intellectual" class="toc-link">Intellectual Property</a>
+              <a href="#governing-law" class="toc-link">Governing Law</a>
+            </div>
+          </aside>
+
+          <div class="legal-content" data-reveal="right">
+            <div class="legal-highlight">
+              <p style="margin:0;color:var(--text-primary);font-size:var(--text-sm);">
+                <strong>Plain English Summary:</strong> These terms govern your use of ASSEMBLIO's website and services. By booking with us, you agree to these terms. We aim to provide a fair, transparent service backed by our 100% satisfaction guarantee.
+              </p>
+            </div>
+
+            <h2 id="agreement">1. Agreement to Terms</h2>
+            <p>By accessing our website or booking any of our services, you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, you may not use our services. These terms constitute a legally binding agreement between you ("the client") and ASSEMBLIO Ltd ("the company", "we", "us").</p>
+
+            <h2 id="services">2. Our Services</h2>
+            <p>ASSEMBLIO Ltd provides furniture assembly, TV wall mounting, shelf installation, and modular kitchen fitting services in London and surrounding areas. All services are:</p>
+            <ul>
+              <li>Performed by DBS-checked, trained, and experienced installers</li>
+              <li>Covered by £2 million public liability insurance</li>
+              <li>Priced transparently with no hidden charges</li>
+              <li>Subject to availability in your area</li>
+            </ul>
+            <p>We reserve the right to decline bookings at our discretion, including where safety concerns exist or where the scope of work differs materially from that described at booking.</p>
+
+            <h2 id="booking">3. Booking & Payment</h2>
+            <p>A booking is confirmed when you receive a written confirmation from ASSEMBLIO. We require:</p>
+            <ul>
+              <li>Accurate information about the service required, number of items, and address</li>
+              <li>Full access to the installation area on the agreed date</li>
+              <li>Furniture or items to be present and accessible on the day</li>
+            </ul>
+            <p>Payment is due upon completion of the service unless otherwise agreed in writing. We accept major debit/credit cards, bank transfer, and contactless payment. All prices quoted are inclusive of VAT unless otherwise stated.</p>
+
+            <h2 id="cancellation">4. Cancellation Policy</h2>
+            <p>We understand plans change. Our cancellation terms are:</p>
+            <ul>
+              <li><strong>More than 24 hours' notice:</strong> Free cancellation or rescheduling</li>
+              <li><strong>Less than 24 hours' notice:</strong> A cancellation fee of 50% of the quoted price applies</li>
+              <li><strong>No-show or same-day cancellation:</strong> Full quoted price is due</li>
+            </ul>
+            <p>To cancel or reschedule, contact us at <a href="mailto:hello@assemblio.co.uk">hello@assemblio.co.uk</a> or call <a href="tel:+442071234567">+44 207 123 4567</a>.</p>
+
+            <h2 id="liability">5. Liability</h2>
+            <p>ASSEMBLIO Ltd carries £2 million public liability insurance. We are liable for damage directly caused by our team's negligence. We are not liable for:</p>
+            <ul>
+              <li>Pre-existing damage to furniture or walls</li>
+              <li>Damage resulting from incorrect or incomplete assembly instructions provided by the manufacturer</li>
+              <li>Furniture that arrives damaged in packaging</li>
+              <li>Loss of earnings or consequential losses arising from service delays</li>
+            </ul>
+            <p>In the event of any damage caused by our team, please notify us within 48 hours and we will arrange inspection and rectification at no cost.</p>
+
+            <h2 id="guarantee">6. Our 14-Day Satisfaction Guarantee</h2>
+            <p>We are committed to quality. If you are not fully satisfied with any aspect of our installation, we will return within 14 calendar days to address any issues free of charge. This guarantee is subject to:</p>
+            <ul>
+              <li>Notification of the issue within 14 days of service completion</li>
+              <li>The furniture remaining in the same position as installed</li>
+              <li>The issue being related to our installation, not subsequent damage</li>
+            </ul>
+
+            <h2 id="intellectual">7. Intellectual Property</h2>
+            <p>All content on this website — including text, images, graphics, logos, and code — is the property of ASSEMBLIO Ltd and is protected by UK copyright law. You may not reproduce, distribute, or use our content without prior written consent.</p>
+
+            <h2 id="governing-law">8. Governing Law</h2>
+            <p>These Terms & Conditions are governed by the laws of England and Wales. Any disputes arising shall be subject to the exclusive jurisdiction of the English courts. For minor disputes, we encourage resolution through our complaints process before legal action.</p>
+            <p>To raise a complaint or concern, please contact: <a href="mailto:hello@assemblio.co.uk">hello@assemblio.co.uk</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="navbar-logo" style="margin-bottom:var(--space-5);display:inline-flex;"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a><p class="footer-desc">London's most trusted furniture assembly specialists.</p></div><div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="services.html" class="footer-link">Flat-Pack Assembly</a></li><li><a href="services.html#tv" class="footer-link">TV Mounting</a></li></ul></div><div><p class="footer-col-title">Legal</p><ul class="footer-links"><li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li><li><a href="terms.html" class="footer-link">Terms & Conditions</a></li><li><a href="sitemap.html" class="footer-link">Sitemap</a></li></ul></div><div><p class="footer-col-title">Contact</p><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:hello@assemblio.co.uk" style="color:inherit;">hello@assemblio.co.uk</a></div></div></div></div><div class="footer-bottom" style="padding:0 var(--space-6) var(--space-6);"><div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);width:100%;max-width:var(--container-max);"><p class="footer-copy">&copy; 2026 ASSEMBLIO Ltd. All rights reserved.</p><div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></div></div></div></footer>
+
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
+  <script src="js/main.js"></script><script src="js/animations.js"></script>
+  <script>
+    const sections = document.querySelectorAll('.legal-content h2[id]');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+      tocLinks.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + current); });
+    }, { passive: true });
+  </script>
+</body>
+</html>

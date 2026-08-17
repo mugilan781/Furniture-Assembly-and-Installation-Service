@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact ASSEMBLIO — Book furniture assembly, TV wall mounting, or kitchen fitting in London. Get a free quote or speak to our team.">
+  <title>Contact ASSEMBLIO — Book Your Installation Today</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .contact-hero { min-height:45vh; background:var(--graphite); display:flex; align-items:flex-end; position:relative; overflow:hidden; }
+    .contact-hero-bg { position:absolute; inset:0; background-image:url('images/hero1.jpg'); background-size:cover; background-position:center; opacity:0.2; }
+    .contact-hero-content { position:relative; z-index:2; width:100%; max-width:var(--container-max); margin:0 auto; padding:var(--space-32) var(--space-6) var(--space-12); }
+    .contact-layout { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-12); align-items:start; }
+    .contact-info-card { background:var(--graphite); border-radius:var(--radius-2xl); padding:var(--space-10); }
+    .contact-info-item { display:flex; gap:var(--space-5); align-items:flex-start; padding:var(--space-5) 0; border-bottom:1px solid rgba(247,243,235,0.1); }
+    .contact-info-item:last-child { border-bottom:none; }
+    .contact-info-icon { width:48px; height:48px; border-radius:var(--radius-md); background:rgba(176,141,87,0.15); border:1px solid rgba(176,141,87,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .contact-info-icon svg { width:22px; height:22px; color:var(--brass); }
+    .map-embed { border-radius:var(--radius-2xl); overflow:hidden; height:400px; background:var(--bg-tertiary); display:flex; align-items:center; justify-content:center; border:1px solid var(--border); position:relative; }
+    .map-placeholder { text-align:center; }
+    .service-area-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-4); }
+    .area-pill { text-align:center; padding:var(--space-4); border:1px solid var(--border); border-radius:var(--radius-lg); font-size:var(--text-sm); font-weight:600; transition:all 0.25s; }
+    .area-pill:hover { border-color:rgba(176,141,87,0.4); background:rgba(176,141,87,0.05); }
+    @media(max-width:1024px){ .contact-layout { grid-template-columns:1fr; } .service-area-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:480px){ .service-area-grid { grid-template-columns:1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <div id="page-loader" class="page-loader" aria-hidden="true"><div class="loader-logo"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+
+  <nav id="navbar" class="navbar navbar-dark" data-transparent="true" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a>
+      <ul class="nav-links"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="services.html" class="nav-link">Services</a></li><li><a href="blog.html" class="nav-link">Blog</a></li><li><a href="contact.html" class="nav-link active">Contact</a></li></ul>
+      <div class="nav-actions"><button class="nav-icon-btn" data-theme-toggle aria-label="Toggle dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></button><button class="nav-icon-btn" data-dir-toggle aria-label="Toggle RTL"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg><span class="dir-label" style="font-size:9px;font-weight:800;">RTL</span></button><a href="contact.html" class="btn btn-primary btn-sm">Book Now</a></div>
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-header"><a href="index.html" class="navbar-logo"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a><button id="mobile-menu-close" class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <nav class="mobile-nav-links"><a href="index.html" class="mobile-nav-link">Home <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="about.html" class="mobile-nav-link">About <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="services.html" class="mobile-nav-link">Services <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="contact.html" class="mobile-nav-link">Contact <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></nav>
+    <div class="mobile-menu-footer"><a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book an Appointment</a></div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: CONTACT HERO -->
+    <section class="contact-hero" aria-labelledby="contact-heading">
+      <div class="contact-hero-bg"></div>
+      <div class="contact-hero-content">
+        <nav class="breadcrumb" style="margin-bottom:var(--space-6);" aria-label="Breadcrumb"><a href="index.html" style="color:rgba(247,243,235,0.6);">Home</a><div class="breadcrumb-sep" style="background:rgba(247,243,235,0.3);"></div><span class="breadcrumb-current">Contact</span></nav>
+        <div class="section-label" style="color:var(--brass-light);" data-reveal="left">Get in Touch</div>
+        <h1 id="contact-heading" class="text-7xl text-inverse tracking-tight" style="max-width:640px;margin-bottom:var(--space-4);" data-reveal="up">Let's Transform<br>Your <em style="color:var(--brass-light);">Space</em></h1>
+        <p class="text-inverse" style="font-size:var(--text-xl);max-width:480px;opacity:0.65;line-height:1.7;" data-reveal="up" data-delay="200">Book a service, request a quote, or simply ask us a question. We respond within 2 hours.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CONTACT FORM + INFO -->
+    <section class="section bg-primary" aria-labelledby="contact-form-heading">
+      <div class="container">
+        <div class="contact-layout">
+          <!-- Form -->
+          <div data-reveal="left">
+            <div class="section-label" style="margin-bottom:var(--space-5);">Send a Message</div>
+            <h2 id="contact-form-heading" class="text-4xl" style="margin-bottom:var(--space-8);">Book Your Service<br>or Request a Quote</h2>
+            <form data-contact-form style="display:flex;flex-direction:column;gap:var(--space-4);" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="cf-name">Full Name <span>*</span></label>
+                  <input id="cf-name" name="name" class="form-input" placeholder="Your full name" data-validate="required,name">
+                  <div class="form-error"></div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cf-phone">Phone <span>*</span></label>
+                  <input id="cf-phone" name="phone" type="tel" class="form-input" placeholder="+44 7XXX XXXXXX" data-validate="required,phone">
+                  <div class="form-error"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-email">Email Address <span>*</span></label>
+                <input id="cf-email" name="email" type="email" class="form-input" placeholder="your@email.com" data-validate="required,email">
+                <div class="form-error"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="cf-service">Service <span>*</span></label>
+                  <select id="cf-service" name="service" class="form-select" data-validate="required">
+                    <option value="">Select service...</option>
+                    <option>Flat-Pack Assembly</option>
+                    <option>TV Wall Mounting</option>
+                    <option>Shelf Installation</option>
+                    <option>Modular Kitchen Fitting</option>
+                    <option>Multiple Services</option>
+                    <option>General Enquiry</option>
+                  </select>
+                  <div class="form-error"></div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cf-postcode">Postcode <span>*</span></label>
+                  <input id="cf-postcode" name="postcode" class="form-input" placeholder="e.g. E1 6AW" data-validate="required,postcode">
+                  <div class="form-error"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-date">Preferred Date</label>
+                <input id="cf-date" name="date" type="date" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-message">Message</label>
+                <textarea id="cf-message" name="message" class="form-textarea" placeholder="Tell us what you need assembled, how many items, any access restrictions..." data-char-limit="800" style="min-height:130px;"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" style="align-self:flex-start;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Send Message
+              </button>
+              <p class="text-xs text-muted" style="margin-top:var(--space-2);">We respond within 2 hours during business hours. By submitting, you agree to our <a href="privacy-policy.html" class="text-brass">Privacy Policy</a>.</p>
+            </form>
+          </div>
+
+          <!-- Info -->
+          <div data-reveal="right">
+            <div class="contact-info-card">
+              <div class="section-label" style="color:var(--brass-light);margin-bottom:var(--space-6);">Contact Information</div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <div>
+                  <p class="text-sm font-bold" style="color:var(--ivory);margin-bottom:4px;">Head Office</p>
+                  <p class="text-sm" style="color:rgba(247,243,235,0.6);">24 Craftsman Lane<br>London, E1 6AW</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.58 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16c.11 0 .21.01.2.92z"/></svg></div>
+                <div>
+                  <p class="text-sm font-bold" style="color:var(--ivory);margin-bottom:4px;">Phone</p>
+                  <a href="tel:+442071234567" class="text-sm" style="color:rgba(247,243,235,0.6);">+44 207 123 4567</a>
+                  <p class="text-xs" style="color:rgba(247,243,235,0.35);margin-top:2px;">Mon–Sat, 8am–7pm</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                <div>
+                  <p class="text-sm font-bold" style="color:var(--ivory);margin-bottom:4px;">Email</p>
+                  <a href="mailto:hello@assemblio.co.uk" class="text-sm" style="color:rgba(247,243,235,0.6);">hello@assemblio.co.uk</a>
+                  <p class="text-xs" style="color:rgba(247,243,235,0.35);margin-top:2px;">Response within 2 hours</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <div>
+                  <p class="text-sm font-bold" style="color:var(--ivory);margin-bottom:4px;">Business Hours</p>
+                  <div style="display:flex;flex-direction:column;gap:4px;">
+                    <div style="display:flex;justify-content:space-between;gap:var(--space-6);"><span class="text-xs" style="color:rgba(247,243,235,0.6);">Monday – Friday</span><span class="text-xs font-semibold" style="color:var(--ivory);">8:00am – 7:00pm</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:var(--space-6);"><span class="text-xs" style="color:rgba(247,243,235,0.6);">Saturday</span><span class="text-xs font-semibold" style="color:var(--ivory);">9:00am – 5:00pm</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:var(--space-6);"><span class="text-xs" style="color:rgba(247,243,235,0.6);">Sunday</span><span class="text-xs" style="color:rgba(247,243,235,0.4);">Closed</span></div>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-top:var(--space-6);padding-top:var(--space-5);border-top:1px solid rgba(247,243,235,0.1);">
+                <p class="text-sm font-bold" style="color:var(--ivory);margin-bottom:var(--space-4);">Follow Us</p>
+                <div style="display:flex;gap:var(--space-3);">
+                  <a href="#" class="social-btn" aria-label="Instagram" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.12);color:var(--ivory);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+                  <a href="#" class="social-btn" aria-label="Facebook" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.12);color:var(--ivory);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                  <a href="#" class="social-btn" aria-label="LinkedIn" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.12);color:var(--ivory);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: MAP (STYLED PLACEHOLDER) -->
+    <section class="section-sm bg-secondary" aria-label="Our location">
+      <div class="container">
+        <div class="map-embed" data-reveal="up">
+          <div class="map-placeholder">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--stone)" stroke-width="1.5" style="margin:0 auto var(--space-4);display:block;opacity:0.4;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p class="text-secondary text-sm" style="max-width:260px;">24 Craftsman Lane, London, E1 6AW</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="margin-top:var(--space-5);">Open in Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SERVICE AREAS -->
+    <section class="section bg-primary" aria-labelledby="areas-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:var(--space-10);">
+          <div class="section-label" style="justify-content:center;" data-reveal="up">Where We Work</div>
+          <h2 id="areas-heading" class="text-4xl" data-reveal="up" data-delay="100">Service Areas</h2>
+          <p class="text-secondary" style="margin-top:var(--space-3);" data-reveal="up" data-delay="200">We cover all London boroughs and surrounding counties.</p>
+        </div>
+        <div class="service-area-grid" data-stagger-grid>
+          <div class="area-pill" data-reveal="up">Central London</div>
+          <div class="area-pill" data-reveal="up" data-delay="50">East London</div>
+          <div class="area-pill" data-reveal="up" data-delay="100">West London</div>
+          <div class="area-pill" data-reveal="up" data-delay="150">North London</div>
+          <div class="area-pill" data-reveal="up" data-delay="200">South London</div>
+          <div class="area-pill" data-reveal="up" data-delay="250">Surrey</div>
+          <div class="area-pill" data-reveal="up" data-delay="300">Essex</div>
+          <div class="area-pill" data-reveal="up" data-delay="350">Hertfordshire</div>
+          <div class="area-pill" data-reveal="up" data-delay="400">Kent</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: QUICK CONTACT METHODS -->
+    <section class="section bg-secondary" aria-labelledby="quick-contact-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:var(--space-10);">
+          <div class="section-label" style="justify-content:center;" data-reveal="up">Instant Contact</div>
+          <h2 id="quick-contact-heading" class="text-4xl" data-reveal="up" data-delay="100">Prefer a Direct Line?</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5);" data-stagger-grid>
+          <div class="service-card" style="text-align:center;" data-reveal="up">
+            <div style="width:56px;height:56px;border-radius:50%;background:rgba(176,141,87,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.58 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16c.11 0 .21.01.2.92z"/></svg></div>
+            <h3 class="text-lg" style="font-family:var(--font-serif);margin-bottom:var(--space-3);">Call Us</h3>
+            <p class="text-sm text-secondary" style="margin-bottom:var(--space-4);">Speak directly with our team. Available Mon–Sat, 8am–7pm.</p>
+            <a href="tel:+442071234567" class="btn btn-outline-brass">+44 207 123 4567</a>
+          </div>
+          <div class="service-card" style="text-align:center;" data-reveal="up" data-delay="100">
+            <div style="width:56px;height:56px;border-radius:50%;background:rgba(176,141,87,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <h3 class="text-lg" style="font-family:var(--font-serif);margin-bottom:var(--space-3);">Email Us</h3>
+            <p class="text-sm text-secondary" style="margin-bottom:var(--space-4);">For detailed quotes, project discussions, or general enquiries.</p>
+            <a href="mailto:hello@assemblio.co.uk" class="btn btn-outline-brass">Send Email</a>
+          </div>
+          <div class="service-card" style="text-align:center;" data-reveal="up" data-delay="200">
+            <div style="width:56px;height:56px;border-radius:50%;background:rgba(176,141,87,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <h3 class="text-lg" style="font-family:var(--font-serif);margin-bottom:var(--space-3);">WhatsApp</h3>
+            <p class="text-sm text-secondary" style="margin-bottom:var(--space-4);">Send photos of your furniture and we'll give you an instant quote.</p>
+            <a href="https://wa.me/442071234567" target="_blank" rel="noopener noreferrer" class="btn btn-outline-brass">Message Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: TRUST INDICATORS -->
+    <section class="section bg-primary" aria-labelledby="trust-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:var(--space-10);">
+          <div class="section-label" style="justify-content:center;" data-reveal="up">Why ASSEMBLIO</div>
+          <h2 id="trust-heading" class="text-4xl" data-reveal="up" data-delay="100">Book with Confidence</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5);" data-stagger-grid>
+          <div style="text-align:center;padding:var(--space-6);" data-reveal="up">
+            <div style="font-family:var(--font-serif);font-size:3rem;color:var(--brass);margin-bottom:var(--space-2);">5,000+</div>
+            <p class="text-sm text-secondary">Homes Served</p>
+          </div>
+          <div style="text-align:center;padding:var(--space-6);" data-reveal="up" data-delay="80">
+            <div style="font-family:var(--font-serif);font-size:3rem;color:var(--brass);margin-bottom:var(--space-2);">4.9</div>
+            <p class="text-sm text-secondary">Star Average Rating</p>
+          </div>
+          <div style="text-align:center;padding:var(--space-6);" data-reveal="up" data-delay="160">
+            <div style="font-family:var(--font-serif);font-size:3rem;color:var(--brass);margin-bottom:var(--space-2);">2hr</div>
+            <p class="text-sm text-secondary">Response Guarantee</p>
+          </div>
+          <div style="text-align:center;padding:var(--space-6);" data-reveal="up" data-delay="240">
+            <div style="font-family:var(--font-serif);font-size:3rem;color:var(--brass);margin-bottom:var(--space-2);">£2M</div>
+            <p class="text-sm text-secondary">Public Liability Cover</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="navbar-logo" style="margin-bottom:var(--space-5);display:inline-flex;"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a><p class="footer-desc">London's most trusted furniture assembly and installation specialists.</p><div class="footer-social"><a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a><a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div><div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="services.html" class="footer-link">Flat-Pack Assembly</a></li><li><a href="services.html#tv" class="footer-link">TV Mounting</a></li><li><a href="services.html#shelves" class="footer-link">Shelf Installation</a></li><li><a href="services.html#kitchen" class="footer-link">Kitchen Fitting</a></li></ul></div><div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="about.html" class="footer-link">About Us</a></li><li><a href="blog.html" class="footer-link">Blog</a></li><li><a href="sitemap.html" class="footer-link">Sitemap</a></li></ul></div><div><p class="footer-col-title">Contact</p><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>24 Craftsman Lane, London E1 6AW</span></div><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.58 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16c.11 0 .21.01.2.92z"/></svg><a href="tel:+442071234567" style="color:inherit;">+44 207 123 4567</a></div></div></div></div><div class="footer-bottom" style="padding:0 var(--space-6) var(--space-6);"><div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);width:100%;max-width:var(--container-max);"><p class="footer-copy">&copy; 2026 ASSEMBLIO Ltd. All rights reserved.</p><div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></div></div></div></footer>
+
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
+  <script src="js/main.js"></script><script src="js/animations.js"></script><script src="js/forms.js"></script>
+</body>
+</html>

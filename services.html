@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ASSEMBLIO Services — Flat-pack assembly, TV wall mounting, shelf installation, and modular kitchen fitting. Professional home installation service in London.">
+  <title>ASSEMBLIO Services — Assembly, Mounting & Installation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .services-hero { min-height:60vh; background:var(--graphite); display:flex; align-items:center; position:relative; overflow:hidden; }
+    .services-hero-bg { position:absolute; inset:0; background-image:url('images/service-flatpack.jpg'); background-size:cover; background-position:center; opacity:0.25; }
+    .service-section { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-16); align-items:center; margin-bottom:var(--space-20); }
+    .service-section:last-child { margin-bottom:0; }
+    .service-section.reverse .service-img { order:2; }
+    .service-section.reverse .service-content { order:1; }
+    .service-img { border-radius:var(--radius-2xl); overflow:hidden; }
+    .service-img img { width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform 0.7s var(--ease-smooth); }
+    .service-img:hover img { transform:scale(1.04); }
+    .service-feature-list { display:flex; flex-direction:column; gap:var(--space-3); margin:var(--space-6) 0; }
+    .service-feature { display:flex; align-items:flex-start; gap:var(--space-3); font-size:var(--text-sm); }
+    .service-feature svg { color:var(--brass); flex-shrink:0; margin-top:2px; }
+    .booking-form-section { background:var(--graphite); border-radius:var(--radius-2xl); padding:var(--space-16); }
+    .booking-form-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:var(--space-12); align-items:start; }
+    .services-tabs-bar { display:flex; gap:var(--space-3); flex-wrap:wrap; padding-bottom:var(--space-6); margin-bottom:var(--space-10); border-bottom:1px solid var(--border); }
+    .serv-tab { padding:var(--space-3) var(--space-5); border-radius:var(--radius-full); font-size:var(--text-sm); font-weight:600; border:1.5px solid var(--border); cursor:pointer; transition:all 0.25s; background:none; color:var(--text-secondary); }
+    .serv-tab.active,.serv-tab:hover { background:var(--brass); border-color:var(--brass); color:white; }
+    @media(max-width:1024px){ .service-section { grid-template-columns:1fr; } .service-section.reverse .service-img,.service-section.reverse .service-content { order:unset; } .booking-form-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div id="page-loader" class="page-loader" aria-hidden="true"><div class="loader-logo"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+
+  <nav id="navbar" class="navbar navbar-dark" data-transparent="true" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a>
+      <ul class="nav-links"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="services.html" class="nav-link active">Services</a></li><li><a href="blog.html" class="nav-link">Blog</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul>
+      <div class="nav-actions"><button class="nav-icon-btn" data-theme-toggle aria-label="Toggle dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></button><button class="nav-icon-btn" data-dir-toggle aria-label="Toggle RTL"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg><span class="dir-label" style="font-size:9px;font-weight:800;">RTL</span></button><a href="contact.html" class="btn btn-primary btn-sm">Book Now</a></div>
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-header"><a href="index.html" class="navbar-logo"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a><button id="mobile-menu-close" class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <nav class="mobile-nav-links"><a href="index.html" class="mobile-nav-link">Home <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="about.html" class="mobile-nav-link">About <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="services.html" class="mobile-nav-link">Services <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="blog.html" class="mobile-nav-link">Blog <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="contact.html" class="mobile-nav-link">Contact <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></nav>
+    <div class="mobile-menu-footer"><a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book an Appointment</a></div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: HERO WITH CATEGORY TABS -->
+    <section class="services-hero" aria-labelledby="services-page-heading">
+      <div class="services-hero-bg"></div>
+      <div style="position:relative;z-index:2;width:100%;max-width:var(--container-max);margin:0 auto;padding:var(--space-32) var(--space-6) var(--space-16);">
+        <nav class="breadcrumb" style="margin-bottom:var(--space-6);" aria-label="Breadcrumb"><a href="index.html" style="color:rgba(247,243,235,0.6);">Home</a><div class="breadcrumb-sep" style="background:rgba(247,243,235,0.3);"></div><span class="breadcrumb-current">Services</span></nav>
+        <div class="section-label" style="color:var(--brass-light);" data-reveal="left">What We Offer</div>
+        <h1 id="services-page-heading" class="text-7xl text-inverse tracking-tight" style="max-width:640px;margin-bottom:var(--space-8);" data-reveal="up">Expert Installation<br>for Every Room</h1>
+        <div class="services-tabs-bar" data-reveal="up" data-delay="200">
+          <a href="#flatpack" class="serv-tab active">Flat-Pack Assembly</a>
+          <a href="#tv" class="serv-tab">TV Mounting</a>
+          <a href="#shelves" class="serv-tab">Shelf Installation</a>
+          <a href="#kitchen" class="serv-tab">Kitchen Fitting</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: FLAT-PACK ASSEMBLY -->
+    <section id="flatpack" class="section bg-primary" aria-labelledby="flatpack-heading">
+      <div class="container">
+        <div class="service-section">
+          <div class="service-img">
+            <img src="images/service-flatpack.jpg" alt="Professional flat-pack furniture assembly" loading="lazy">
+          </div>
+          <div class="service-content" data-reveal="right">
+            <div class="section-label">Service 01</div>
+            <h2 id="flatpack-heading" class="text-5xl" style="margin-bottom:var(--space-5);">Flat-Pack Assembly</h2>
+            <p class="text-secondary" style="font-size:var(--text-lg);line-height:1.8;margin-bottom:var(--space-4);">We assemble all flat-pack furniture — quickly, correctly, and safely. No more stripped screws or wobbly shelves.</p>
+            <p class="text-secondary text-sm" style="line-height:1.8;">Whether you have a single bedside table or an entire bedroom set, our team handles every brand and assembly system with professional precision.</p>
+            <div class="service-feature-list">
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>IKEA, Argos, Wayfair, John Lewis, and all major brands</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Beds, wardrobes, desks, bookshelves, storage units</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Instructions followed to exact specification</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Packaging removed and disposed of on request</span></div>
+            </div>
+            <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
+              <a href="contact.html" class="btn btn-primary">Book Assembly</a>
+              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £45</strong> per item</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TV WALL MOUNTING -->
+    <section id="tv" class="section bg-secondary" aria-labelledby="tv-heading">
+      <div class="container">
+        <div class="service-section reverse">
+          <div class="service-img" data-reveal="left">
+            <img src="images/service-tv.jpg" alt="TV wall mounting service" loading="lazy">
+          </div>
+          <div class="service-content" data-reveal="right">
+            <div class="section-label">Service 02</div>
+            <h2 id="tv-heading" class="text-5xl" style="margin-bottom:var(--space-5);">TV Wall Mounting</h2>
+            <p class="text-secondary" style="font-size:var(--text-lg);line-height:1.8;margin-bottom:var(--space-4);">A clean, flush, professionally mounted TV transforms a room. We handle the wall type, cable management, and exact positioning.</p>
+            <p class="text-secondary text-sm" style="line-height:1.8;">From plasterboard with stud-finding to masonry and concrete walls — we know every wall type and the right fixings for each.</p>
+            <div class="service-feature-list">
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>All screen sizes from 32" to 100"</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Fixed, tilting, and full-motion articulating mounts</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Full cable concealment in wall or conduit</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Soundbar and device mounting available</span></div>
+            </div>
+            <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
+              <a href="contact.html" class="btn btn-primary">Book TV Mounting</a>
+              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £79</strong> per screen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SHELF INSTALLATION -->
+    <section id="shelves" class="section bg-primary" aria-labelledby="shelves-heading">
+      <div class="container">
+        <div class="service-section">
+          <div class="service-img">
+            <img src="images/service-shelf.jpg" alt="Floating shelf installation" loading="lazy">
+          </div>
+          <div class="service-content" data-reveal="right">
+            <div class="section-label">Service 03</div>
+            <h2 id="shelves-heading" class="text-5xl" style="margin-bottom:var(--space-5);">Shelf Installation</h2>
+            <p class="text-secondary" style="font-size:var(--text-lg);line-height:1.8;margin-bottom:var(--space-4);">Floating shelves, alcove shelving, or bracket-mounted systems — perfectly level, perfectly safe, perfectly placed.</p>
+            <p class="text-secondary text-sm" style="line-height:1.8;">We stud-find, use the right rawl plugs, and check weight capacity before installing. Your belongings — and your walls — are in safe hands.</p>
+            <div class="service-feature-list">
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Floating shelves on any wall type</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Alcove and chimney breast shelving systems</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Bracket systems for heavy-load shelves</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Laser levelling for perfect alignment</span></div>
+            </div>
+            <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
+              <a href="contact.html" class="btn btn-primary">Book Shelf Install</a>
+              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £35</strong> per shelf</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: KITCHEN FITTING -->
+    <section id="kitchen" class="section bg-secondary" aria-labelledby="kitchen-heading">
+      <div class="container">
+        <div class="service-section reverse">
+          <div class="service-img" data-reveal="left">
+            <img src="images/service-kitchen.jpg" alt="Modular kitchen cabinet installation" loading="lazy">
+          </div>
+          <div class="service-content" data-reveal="right">
+            <div class="section-label">Service 04</div>
+            <h2 id="kitchen-heading" class="text-5xl" style="margin-bottom:var(--space-5);">Modular Kitchen Fitting</h2>
+            <p class="text-secondary" style="font-size:var(--text-lg);line-height:1.8;margin-bottom:var(--space-4);">Our most comprehensive service. Complete modular kitchen installation from base and wall unit fitting to worktop and appliance integration.</p>
+            <p class="text-secondary text-sm" style="line-height:1.8;">We work with all major kitchen brands and ranges including IKEA SEKTION, B&Q GoodHome, Howdens, and Magnet — as well as bespoke kitchen units.</p>
+            <div class="service-feature-list">
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Base & wall cabinet installation</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Worktop cutting and fitting</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Plinth, cornice, and pelmet fitting</span></div>
+              <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Appliance integration and door adjustments</span></div>
+            </div>
+            <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
+              <a href="contact.html" class="btn btn-primary">Book Kitchen Fitting</a>
+              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £349</strong> full kitchen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: BOOKING CTA FORM -->
+    <section class="section bg-primary" aria-labelledby="booking-heading">
+      <div class="container">
+        <div class="booking-form-section" data-reveal="up">
+          <div class="booking-form-grid">
+            <div>
+              <div class="section-label" style="color:var(--brass-light);">Ready to Book?</div>
+              <h2 id="booking-heading" class="text-5xl text-inverse" style="margin-bottom:var(--space-5);">Get Your<br>Free Quote</h2>
+              <p style="color:rgba(247,243,235,0.6);font-size:var(--text-base);line-height:1.8;margin-bottom:var(--space-8);">Tell us what you need and we'll get back to you within 2 hours with a fixed price and available dates.</p>
+              <div style="display:flex;flex-direction:column;gap:var(--space-4);">
+                <div style="display:flex;align-items:center;gap:var(--space-3);color:rgba(247,243,235,0.7);font-size:var(--text-sm);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Same-week appointments available</div>
+                <div style="display:flex;align-items:center;gap:var(--space-3);color:rgba(247,243,235,0.7);font-size:var(--text-sm);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Fixed, transparent pricing</div>
+                <div style="display:flex;align-items:center;gap:var(--space-3);color:rgba(247,243,235,0.7);font-size:var(--text-sm);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>100% satisfaction guaranteed</div>
+              </div>
+            </div>
+            <form data-booking-form style="background:rgba(247,243,235,0.06);border:1px solid rgba(247,243,235,0.1);border-radius:var(--radius-xl);padding:var(--space-8);" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" style="color:rgba(247,243,235,0.8);" for="b-name">Name <span>*</span></label>
+                  <input id="b-name" name="name" class="form-input" placeholder="Your full name" data-validate="required,name" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.15);color:var(--ivory);">
+                  <div class="form-error" style="color:#FC8181;"></div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" style="color:rgba(247,243,235,0.8);" for="b-phone">Phone <span>*</span></label>
+                  <input id="b-phone" name="phone" type="tel" class="form-input" placeholder="+44 7XXX XXXXXX" data-validate="required,phone" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.15);color:var(--ivory);">
+                  <div class="form-error" style="color:#FC8181;"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" style="color:rgba(247,243,235,0.8);" for="b-email">Email <span>*</span></label>
+                <input id="b-email" name="email" type="email" class="form-input" placeholder="your@email.com" data-validate="required,email" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.15);color:var(--ivory);">
+                <div class="form-error" style="color:#FC8181;"></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" style="color:rgba(247,243,235,0.8);" for="b-service">Service Required <span>*</span></label>
+                <select id="b-service" name="service" class="form-select" data-validate="required" style="background:rgba(32,33,36,0.8);border-color:rgba(247,243,235,0.15);color:var(--ivory);">
+                  <option value="">Select a service...</option>
+                  <option>Flat-Pack Assembly</option>
+                  <option>TV Wall Mounting</option>
+                  <option>Shelf Installation</option>
+                  <option>Modular Kitchen Fitting</option>
+                  <option>Multiple Services</option>
+                </select>
+                <div class="form-error" style="color:#FC8181;"></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" style="color:rgba(247,243,235,0.8);" for="b-details">Details</label>
+                <textarea id="b-details" name="details" class="form-textarea" placeholder="Tell us what needs assembling — brand, number of items, special requirements..." data-char-limit="500" style="background:rgba(247,243,235,0.08);border-color:rgba(247,243,235,0.15);color:var(--ivory);min-height:120px;"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                <span class="btn-text">Send Quote Request</span>
+                <div class="spinner" style="display:none;width:18px;height:18px;border-width:2px;"></div>
+              </button>
+            </form>
+            <div data-form-success style="display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:var(--space-10);">
+              <div style="width:64px;height:64px;background:linear-gradient(135deg,var(--brass),var(--brass-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-6);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <h3 class="text-3xl text-inverse" style="font-family:var(--font-serif);margin-bottom:var(--space-3);">Quote Sent!</h3>
+              <p style="color:rgba(247,243,235,0.6);">We'll be in touch within 2 hours with your personalised quote and available dates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="navbar-logo" style="margin-bottom:var(--space-5);display:inline-flex;"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a><p class="footer-desc">London's most trusted furniture assembly and installation specialists.</p><div class="footer-social"><a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a><a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div><div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="#flatpack" class="footer-link">Flat-Pack Assembly</a></li><li><a href="#tv" class="footer-link">TV Wall Mounting</a></li><li><a href="#shelves" class="footer-link">Shelf Installation</a></li><li><a href="#kitchen" class="footer-link">Kitchen Fitting</a></li></ul></div><div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="about.html" class="footer-link">About Us</a></li><li><a href="blog.html" class="footer-link">Blog</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div><div><p class="footer-col-title">Contact</p><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.58 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16c.11 0 .21.01.2.92z"/></svg><a href="tel:+442071234567" style="color:inherit;">+44 207 123 4567</a></div></div></div></div><div class="footer-bottom" style="padding:0 var(--space-6) var(--space-6);"><div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);width:100%;max-width:var(--container-max);"><p class="footer-copy">&copy; 2026 ASSEMBLIO Ltd. All rights reserved.</p><div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></div></div></div></footer>
+
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
+  <script src="js/main.js"></script><script src="js/animations.js"></script><script src="js/forms.js"></script>
+  <script>
+    // Smooth scroll for tab anchors
+    document.querySelectorAll('.serv-tab').forEach(tab => {
+      tab.addEventListener('click', function(e) {
+        document.querySelectorAll('.serv-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

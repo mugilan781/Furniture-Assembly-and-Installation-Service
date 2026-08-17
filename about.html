@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About ASSEMBLIO — Our story, our team, and our commitment to premium furniture installation and assembly services in London.">
+  <title>About ASSEMBLIO — Our Story, Team & Values</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .page-hero { min-height: 70vh; display:flex; align-items:center; background:var(--graphite); position:relative; overflow:hidden; }
+    .page-hero-bg { position:absolute; inset:0; background-size:cover; background-position:center; opacity:0.3; }
+    .page-hero-content { position:relative; z-index:2; max-width:var(--container-max); margin:0 auto; padding: var(--space-24) var(--space-6) var(--space-16); width:100%; }
+    .brand-story-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-16); align-items:center; }
+    .brand-story-text h2 { font-size:clamp(2rem,4vw,3.5rem); margin-bottom:var(--space-6); }
+    .brand-story-text p { font-size:var(--text-base); line-height:1.9; color:var(--text-secondary); margin-bottom:var(--space-5); }
+    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6); }
+    .team-card { border-radius:var(--radius-xl); overflow:hidden; background:var(--bg-primary); border:1px solid var(--border); transition:all 0.35s var(--ease-smooth); }
+    [data-theme="dark"] .team-card { background:var(--bg-secondary); }
+    .team-card:hover { box-shadow:var(--shadow-xl); transform:translateY(-6px); }
+    .team-avatar { aspect-ratio:4/5; overflow:hidden; background:linear-gradient(135deg,var(--brass),var(--walnut)); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:5rem; color:white; }
+    .team-body { padding:var(--space-5); }
+    .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6); }
+    .value-item { display:flex; gap:var(--space-5); align-items:flex-start; }
+    .value-icon { width:52px; height:52px; border-radius:var(--radius-lg); background:rgba(176,141,87,0.1); border:1px solid rgba(176,141,87,0.15); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .value-icon svg { width:24px; height:24px; color:var(--brass); }
+    .cta-banner { background:linear-gradient(135deg,var(--graphite) 0%, var(--olive) 100%); border-radius:var(--radius-2xl); padding:var(--space-16); position:relative; overflow:hidden; }
+    .cta-banner::before { content:''; position:absolute; top:-80px; right:-80px; width:320px; height:320px; border-radius:50%; border:1px solid rgba(176,141,87,0.1); }
+    .cta-banner::after { content:''; position:absolute; bottom:-60px; left:-60px; width:220px; height:220px; border-radius:50%; border:1px solid rgba(176,141,87,0.08); }
+    .certif-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-6); }
+    .certif-item { text-align:center; padding:var(--space-8); border:1px solid var(--border); border-radius:var(--radius-xl); transition:all 0.3s var(--ease-smooth); }
+    .certif-item:hover { border-color:rgba(176,141,87,0.3); transform:translateY(-4px); box-shadow:var(--shadow-md); }
+    .certif-icon { width:56px; height:56px; margin:0 auto var(--space-4); border-radius:var(--radius-md); background:linear-gradient(135deg,var(--brass),var(--brass-dark)); display:flex; align-items:center; justify-content:center; }
+    .certif-icon svg { width:28px; height:28px; color:white; }
+    @media(max-width:1024px){ .brand-story-grid { grid-template-columns:1fr; } .team-grid { grid-template-columns:repeat(2,1fr); } .values-grid { grid-template-columns:repeat(2,1fr); } .certif-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:640px){ .team-grid,.values-grid,.certif-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div id="page-loader" class="page-loader" aria-hidden="true"><div class="loader-logo"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+
+  <nav id="navbar" class="navbar navbar-dark" data-transparent="true" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a>
+      <ul class="nav-links"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="about.html" class="nav-link active">About</a></li><li><a href="services.html" class="nav-link">Services</a></li><li><a href="blog.html" class="nav-link">Blog</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" data-theme-toggle aria-label="Toggle dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></button>
+        <button class="nav-icon-btn" data-dir-toggle aria-label="Toggle RTL"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg><span class="dir-label" style="font-size:9px;font-weight:800;">RTL</span></button>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+      </div>
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-header"><a href="index.html" class="navbar-logo"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a><button id="mobile-menu-close" class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <nav class="mobile-nav-links"><a href="index.html" class="mobile-nav-link">Home <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="about.html" class="mobile-nav-link">About <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="services.html" class="mobile-nav-link">Services <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="blog.html" class="mobile-nav-link">Blog <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a><a href="contact.html" class="mobile-nav-link">Contact <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></nav>
+    <div class="mobile-menu-footer"><a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book an Appointment</a></div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: ABOUT HERO -->
+    <section class="page-hero" aria-labelledby="about-heading">
+      <div class="page-hero-bg" style="background-image:url('images/about-team.jpg');"></div>
+      <div class="page-hero-content">
+        <nav class="breadcrumb" style="margin-bottom:var(--space-6);" aria-label="Breadcrumb">
+          <a href="index.html" style="color:rgba(247,243,235,0.6);">Home</a>
+          <div class="breadcrumb-sep" style="background:rgba(247,243,235,0.3);"></div>
+          <span class="breadcrumb-current">About</span>
+        </nav>
+        <div class="section-label" style="color:var(--brass-light);" data-reveal="left">About ASSEMBLIO</div>
+        <h1 id="about-heading" class="text-7xl text-inverse tracking-tight" style="max-width:720px;margin-bottom:var(--space-6);" data-reveal="up">
+          The Craftsmen<br>Behind Every<br><em style="color:var(--brass-light);">Perfect Room</em>
+        </h1>
+        <p class="text-inverse" style="font-size:var(--text-xl);max-width:500px;line-height:1.7;opacity:0.7;" data-reveal="up" data-delay="200">
+          Founded in 2014, ASSEMBLIO has been London's most trusted installation partner for over a decade.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: BRAND STORY -->
+    <section class="section bg-primary" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="brand-story-grid">
+          <div class="brand-story-text" data-reveal="left">
+            <div class="section-label">Our Story</div>
+            <h2 id="story-heading">From One Man<br>& a Van, to London's<br><em>Most Trusted Team</em></h2>
+            <p>ASSEMBLIO began in 2014 with a single goal: to prove that furniture installation could be an art form. Founder Thomas Reid, a trained carpenter with a background in bespoke furniture, was tired of watching homeowners receive flat-pack furniture only to struggle with installation or end up with poorly assembled results.</p>
+            <p>Today, our team of 24 certified installation specialists handles everything from a single IKEA wardrobe to full modular kitchen installations in some of London's most prestigious addresses.</p>
+            <p>Every project is approached with the same commitment to precision, professionalism, and pride in our work — whether it's a studio flat or a penthouse apartment.</p>
+          </div>
+          <div data-reveal="right">
+            <div class="img-zoom-wrap" style="border-radius:var(--radius-2xl);overflow:hidden;">
+              <img src="images/about-team.jpg" alt="ASSEMBLIO installation team" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TEAM GRID -->
+    <section class="section bg-secondary" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:var(--space-12);">
+          <div class="section-label" style="justify-content:center;" data-reveal="up">Meet the Team</div>
+          <h2 id="team-heading" class="text-5xl" data-reveal="up" data-delay="100">The Specialists Behind<br>Every Installation</h2>
+        </div>
+        <div class="team-grid" data-stagger-grid>
+          <div class="team-card" data-reveal="up">
+            <div class="team-avatar">T</div>
+            <div class="team-body">
+              <h3 class="text-xl" style="font-family:var(--font-serif);margin-bottom:4px;">Thomas Reid</h3>
+              <p class="text-brass text-xs font-bold tracking-wider uppercase" style="margin-bottom:var(--space-3);">Founder & Lead Installer</p>
+              <p class="text-sm text-secondary" style="line-height:1.7;">12 years experience. Trained carpenter, bespoke furniture specialist, and kitchen fitting expert.</p>
+            </div>
+          </div>
+          <div class="team-card" data-reveal="up" data-delay="100">
+            <div class="team-avatar" style="background:linear-gradient(135deg,var(--olive),var(--olive-light));">M</div>
+            <div class="team-body">
+              <h3 class="text-xl" style="font-family:var(--font-serif);margin-bottom:4px;">Marcus Williams</h3>
+              <p class="text-brass text-xs font-bold tracking-wider uppercase" style="margin-bottom:var(--space-3);">Senior Installation Specialist</p>
+              <p class="text-sm text-secondary" style="line-height:1.7;">8 years experience. Electrical integration, TV mounting, and smart home setup expert.</p>
+            </div>
+          </div>
+          <div class="team-card" data-reveal="up" data-delay="200">
+            <div class="team-avatar" style="background:linear-gradient(135deg,var(--walnut),#4a2e1e);">L</div>
+            <div class="team-body">
+              <h3 class="text-xl" style="font-family:var(--font-serif);margin-bottom:4px;">Layla Hassan</h3>
+              <p class="text-brass text-xs font-bold tracking-wider uppercase" style="margin-bottom:var(--space-3);">Kitchen Fitting Lead</p>
+              <p class="text-sm text-secondary" style="line-height:1.7;">10 years experience. Modular kitchen systems, worktop installation, and plinth finishing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: VALUES / MISSION -->
+    <section class="section bg-primary" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:var(--space-12);">
+          <div class="section-label" style="justify-content:center;" data-reveal="up">What We Stand For</div>
+          <h2 id="values-heading" class="text-5xl" data-reveal="up" data-delay="100">Our Core Values</h2>
+        </div>
+        <div class="values-grid" data-stagger-grid>
+          <div class="value-item" data-reveal="up">
+            <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div>
+              <h3 class="text-lg" style="font-family:var(--font-serif);margin-bottom:var(--space-2);">Precision First</h3>
+              <p class="text-sm text-secondary" style="line-height:1.7;">Every measurement is checked twice. Every joint is seated perfectly. We do not cut corners — ever.</p>
+            </div>
+          </div>
+          <div class="value-item" data-reveal="up" data-delay="80">
+            <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div>
+              <h3 class="text-lg" style="font-family:var(--font-serif);margin-bottom:var(--space-2);">Trust & Safety</h3>
+              <p class="text-sm text-secondary" style="line-height:1.7;">All staff are DBS-checked, fully insured, and trained to residential safety standards.</p>
+            </div>
+          </div>
+          <div class="value-item" data-reveal="up" data-delay="160">
+            <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div>
+              <h3 class="text-lg" style="font-family:var(--font-serif);margin-bottom:var(--space-2);">Punctuality</h3>
+              <p class="text-sm text-secondary" style="line-height:1.7;">We respect your time. Our on-time guarantee means we call ahead if anything changes.</p>
+            </div>
+          </div>
+          <div class="value-item" data-reveal="up" data-delay="240">
+            <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div>
+              <h3 class="text-lg" style="font-family:var(--font-serif);margin-bottom:var(--space-2);">Customer Focus</h3>
+              <p class="text-sm text-secondary" style="line-height:1.7;">We listen. We adapt. We deliver exactly what you envisioned — not what's easiest for us.</p>
+            </div>
+          </div>
+          <div class="value-item" data-reveal="up" data-delay="320">
+            <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+            <div>
+              <h3 class="text-lg" style="font-family:var(--font-serif);margin-bottom:var(--space-2);">Satisfaction Guarantee</h3>
+              <p class="text-sm text-secondary" style="line-height:1.7;">Not happy? We come back free of charge within 14 days to make it right. No questions asked.</p>
+            </div>
+          </div>
+          <div class="value-item" data-reveal="up" data-delay="400">
+            <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+            <div>
+              <h3 class="text-lg" style="font-family:var(--font-serif);margin-bottom:var(--space-2);">Expert Knowledge</h3>
+              <p class="text-sm text-secondary" style="line-height:1.7;">Trained on 200+ furniture brands and installation systems. We've seen it all — and solved it all.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: CERTIFICATIONS -->
+    <section class="section bg-secondary" aria-labelledby="certif-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:var(--space-12);">
+          <div class="section-label" style="justify-content:center;" data-reveal="up">Our Credentials</div>
+          <h2 id="certif-heading" class="text-4xl" data-reveal="up" data-delay="100">Accredited & Trusted</h2>
+        </div>
+        <div class="certif-grid" data-stagger-grid>
+          <div class="certif-item" data-reveal="up">
+            <div class="certif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+            <h3 class="text-base font-semibold" style="margin-bottom:var(--space-2);">£2M Public Liability</h3>
+            <p class="text-xs text-muted">Fully insured for all residential and commercial work</p>
+          </div>
+          <div class="certif-item" data-reveal="up" data-delay="80">
+            <div class="certif-icon" style="background:linear-gradient(135deg,var(--olive),var(--olive-light));"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+            <h3 class="text-base font-semibold" style="margin-bottom:var(--space-2);">IKEA Partner</h3>
+            <p class="text-xs text-muted">Certified IKEA assembly and installation specialists</p>
+          </div>
+          <div class="certif-item" data-reveal="up" data-delay="160">
+            <div class="certif-icon" style="background:linear-gradient(135deg,var(--walnut),#4a2e1e);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+            <h3 class="text-base font-semibold" style="margin-bottom:var(--space-2);">DBS Checked</h3>
+            <p class="text-xs text-muted">All team members are background-checked and verified</p>
+          </div>
+          <div class="certif-item" data-reveal="up" data-delay="240">
+            <div class="certif-icon" style="background:linear-gradient(135deg,#5B5EA6,#4a4d8f);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <h3 class="text-base font-semibold" style="margin-bottom:var(--space-2);">5-Star Rated</h3>
+            <p class="text-xs text-muted">4.9/5 average across Google, Trustpilot & Checkatrade</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CTA BANNER -->
+    <section class="section bg-primary" aria-labelledby="about-cta-heading">
+      <div class="container">
+        <div class="cta-banner" data-reveal="scale">
+          <div style="position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;align-items:center;gap:var(--space-8);flex-wrap:wrap;">
+            <div>
+              <div class="section-label" style="color:var(--brass-light);">Ready to Start?</div>
+              <h2 id="about-cta-heading" class="text-5xl text-inverse" style="margin-bottom:var(--space-4);">Book Your Installation Today</h2>
+              <p style="color:rgba(247,243,235,0.6);font-size:var(--text-lg);max-width:500px;line-height:1.7;">Same-week availability. No-nonsense pricing. 100% satisfaction guarantee. Let's transform your space together.</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4);flex-shrink:0;">
+              <a href="contact.html" class="btn btn-primary btn-lg">Book Now</a>
+              <a href="tel:+442071234567" class="btn btn-light btn-lg">Call Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="navbar-logo" style="margin-bottom:var(--space-5);display:inline-flex;"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a><p class="footer-desc">London's most trusted furniture assembly and installation specialists. Precision, professionalism, and premium finishes — guaranteed.</p><div class="footer-social"><a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a><a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div>
+        <div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="services.html#flatpack" class="footer-link">Flat-Pack Assembly</a></li><li><a href="services.html#tv" class="footer-link">TV Wall Mounting</a></li><li><a href="services.html#shelves" class="footer-link">Shelf Installation</a></li><li><a href="services.html#kitchen" class="footer-link">Kitchen Fitting</a></li></ul></div>
+        <div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="about.html" class="footer-link">About Us</a></li><li><a href="blog.html" class="footer-link">Blog</a></li><li><a href="contact.html" class="footer-link">Contact</a></li><li><a href="sitemap.html" class="footer-link">Sitemap</a></li></ul></div>
+        <div><p class="footer-col-title">Contact</p><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.58 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16c.11 0 .21.01.2.92z"/></svg><a href="tel:+442071234567" style="color:inherit;">+44 207 123 4567</a></div><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:hello@assemblio.co.uk" style="color:inherit;">hello@assemblio.co.uk</a></div></div>
+      </div>
+    </div>
+    <div class="footer-bottom" style="padding:0 var(--space-6) var(--space-6);"><div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);width:100%;max-width:var(--container-max);"><p class="footer-copy">&copy; 2026 ASSEMBLIO Ltd. All rights reserved.</p><div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a></div></div></div>
+  </footer>
+
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
+  <script src="js/main.js"></script><script src="js/animations.js"></script><script src="js/forms.js"></script>
+</body>
+</html>

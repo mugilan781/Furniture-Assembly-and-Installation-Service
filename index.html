@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ASSEMBLIO — Premium furniture assembly and installation service. Expert flat-pack assembly, TV wall mounting, shelf installation & modular kitchen fitting.">
+  <meta name="keywords" content="furniture assembly, flat-pack assembly, TV wall mounting, shelf installation, modular kitchen fitting, home installation service">
+  <meta property="og:title" content="ASSEMBLIO — Premium Furniture Installation Service">
+  <meta property="og:description" content="Expert furniture assembly and installation. Precision-crafted spaces, delivered.">
+  <meta property="og:type" content="website">
+  <title>ASSEMBLIO — Premium Furniture Assembly & Installation Service</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    /* ─── HOME-SPECIFIC STYLES ─── */
+    /* Services Overview */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+    }
+
+    /* About Split */
+    .about-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 560px;
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+    }
+
+    .about-split-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-split-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-smooth);
+    }
+
+    .about-split:hover .about-split-image img { transform: scale(1.04); }
+
+    .about-split-content {
+      background: var(--graphite);
+      padding: var(--space-16) var(--space-12);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--brass), var(--walnut), var(--brass));
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .stat-divider {
+      grid-column: auto;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-divider:last-child { border-right: none; }
+
+    /* Gallery */
+    .gallery-masonry {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: var(--space-4);
+    }
+
+    .gallery-item {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item:nth-child(1) { grid-row: span 2; }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s var(--ease-smooth);
+    }
+
+    .gallery-item:hover img { transform: scale(1.06); }
+
+    .gallery-item:nth-child(1) { aspect-ratio: auto; }
+    .gallery-item:not(:nth-child(1)) { aspect-ratio: 4/3; }
+
+    /* Testimonials Scroll */
+    .testimonials-track-outer {
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: grab;
+    }
+
+    .testimonials-track-outer::-webkit-scrollbar { display: none; }
+    .testimonials-track-outer:active { cursor: grabbing; }
+
+    .testimonials-track {
+      display: flex;
+      gap: var(--space-5);
+      width: max-content;
+      padding-bottom: var(--space-4);
+    }
+
+    .testimonials-track .testimonial-card {
+      width: 380px;
+    }
+
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-divider:nth-child(2) { border-right: none; }
+      .stat-divider:nth-child(3) { border-top: 1px solid var(--border); }
+      .about-split { grid-template-columns: 1fr; min-height: auto; }
+      .about-split-image { aspect-ratio: 16/9; }
+      .about-split-content { padding: var(--space-10) var(--space-8); }
+    }
+
+    @media (max-width: 768px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-masonry { grid-template-columns: 1fr 1fr; }
+      .gallery-item:nth-child(1) { grid-row: span 1; aspect-ratio: 4/3; }
+      .testimonials-track .testimonial-card { width: 300px; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-masonry { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+    <div class="loader-logo">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="4" y="4" width="10" height="10" rx="1"/>
+        <rect x="18" y="4" width="10" height="10" rx="1"/>
+        <rect x="4" y="18" width="10" height="10" rx="1"/>
+        <rect x="18" y="18" width="10" height="10" rx="1"/>
+      </svg>
+    </div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <p style="color:rgba(247,243,235,0.4);font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;margin-top:8px;">Loading</p>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar transparent" data-transparent="true" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="ASSEMBLIO Home">
+        <div class="logo-mark">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="4" y="4" width="10" height="10" rx="1"/>
+            <rect x="18" y="4" width="10" height="10" rx="1"/>
+            <rect x="4" y="18" width="10" height="10" rx="1"/>
+            <rect x="18" y="18" width="10" height="10" rx="1"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">ASSEMBLIO</span>
+          <span class="logo-tagline">Premium Installation</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="services.html" class="nav-link">
+            Services
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="services.html#flatpack" class="dropdown-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+              Flat-Pack Assembly
+            </a>
+            <a href="services.html#tv" class="dropdown-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><polyline points="17 7 17 2 7 2 7 7"/></svg>
+              TV Wall Mounting
+            </a>
+            <a href="services.html#shelves" class="dropdown-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              Shelf Installation
+            </a>
+            <a href="services.html#kitchen" class="dropdown-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Modular Kitchen Fitting
+            </a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="nav-icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="nav-icon-btn" data-dir-toggle aria-label="Toggle text direction" title="Switch to RTL">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          <span class="dir-label" style="font-size:9px;font-weight:800;letter-spacing:0.05em;">RTL</span>
+        </button>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+      </div>
+
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="navbar-logo">
+        <div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div>
+        <div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div>
+      </a>
+      <button id="mobile-menu-close" class="nav-icon-btn" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav-links" role="list">
+      <a href="index.html" class="mobile-nav-link">Home <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="about.html" class="mobile-nav-link">About <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="services.html" class="mobile-nav-link">Services <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="blog.html" class="mobile-nav-link">Blog <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="contact.html" class="mobile-nav-link">Contact <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book an Appointment</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ═══════════════════════════════════════════════
+         SECTION 1: HERO SLIDER
+    ═══════════════════════════════════════════════ -->
+    <section id="hero-slider" class="hero-slider" aria-label="Hero slider">
+      <div class="slider-progress" id="slider-progress"></div>
+
+      <div class="hero-slides">
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <div class="hero-slide-bg" style="background-image: url('images/hero1.jpg');"></div>
+          <div class="hero-slide-overlay"></div>
+          <div class="hero-slide-content">
+            <span class="hero-eyebrow">Trusted by 5,000+ Homes</span>
+            <h1 class="hero-title">Where Precision<br>Meets <em>Interior Excellence</em></h1>
+            <p class="hero-subtitle">Premium furniture assembly and installation. Every joint, every shelf, every screen — placed with craft and care.</p>
+            <div class="hero-actions">
+              <a href="services.html" class="btn btn-primary btn-lg">Explore Services</a>
+              <a href="contact.html" class="btn btn-light btn-lg">Book Today</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <div class="hero-slide-bg" style="background-image: url('images/hero2.jpg');"></div>
+          <div class="hero-slide-overlay"></div>
+          <div class="hero-slide-content">
+            <span class="hero-eyebrow">Flat-Pack Assembly Specialists</span>
+            <h1 class="hero-title">From Flat Boxes<br>to <em>Refined Living</em></h1>
+            <p class="hero-subtitle">We handle everything — from complex wardrobes to modular shelving systems. Fully assembled, perfectly finished.</p>
+            <div class="hero-actions">
+              <a href="services.html#flatpack" class="btn btn-primary btn-lg">Our Services</a>
+              <a href="home2.html" class="btn btn-light btn-lg">See Pricing</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <div class="hero-slide-bg" style="background-image: url('images/hero3.jpg');"></div>
+          <div class="hero-slide-overlay"></div>
+          <div class="hero-slide-content">
+            <span class="hero-eyebrow">Modular Kitchen Specialists</span>
+            <h1 class="hero-title">Kitchens That Are<br><em>Architecturally Inspired</em></h1>
+            <p class="hero-subtitle">Precision-fitted modular kitchens with brass hardware, marble countertops, and seamless integrated finishes.</p>
+            <div class="hero-actions">
+              <a href="services.html#kitchen" class="btn btn-primary btn-lg">Kitchen Services</a>
+              <a href="about.html" class="btn btn-light btn-lg">About Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Navigation -->
+      <div class="slider-nav">
+        <button class="slider-arrow slider-prev" aria-label="Previous slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="slider-dots" role="group" aria-label="Slide indicators">
+          <button class="slider-dot active" aria-label="Slide 1"></button>
+          <button class="slider-dot" aria-label="Slide 2"></button>
+          <button class="slider-dot" aria-label="Slide 3"></button>
+        </div>
+        <button class="slider-arrow slider-next" aria-label="Next slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <!-- Slide Counter -->
+      <div class="slide-counter" aria-hidden="true">
+        <span class="slide-counter-current">01</span>
+        <div class="slide-counter-line"></div>
+        <span class="slide-counter-total">03</span>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-indicator-line"></div>
+        <span class="scroll-indicator-text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 2: SERVICES OVERVIEW
+    ═══════════════════════════════════════════════ -->
+    <section class="section bg-primary" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="flex items-center justify-between" style="margin-bottom:var(--space-12);flex-wrap:wrap;gap:var(--space-5);">
+          <div>
+            <div class="section-label" data-reveal="left">What We Do</div>
+            <h2 id="services-heading" class="text-4xl" style="max-width:480px;" data-reveal="up" data-delay="100">
+              Expert Installation,<br>Every Time
+            </h2>
+          </div>
+          <a href="services.html" class="btn btn-secondary" data-reveal="right">View All Services</a>
+        </div>
+
+        <div class="services-grid" data-stagger-grid>
+          <!-- Service 1 -->
+          <article class="service-card card-body-lg" data-reveal="up">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+            </div>
+            <h3 class="text-xl" style="font-family:var(--font-serif);margin-bottom:var(--space-3);">Flat-Pack Assembly</h3>
+            <p class="text-sm text-secondary" style="line-height:1.8;margin-bottom:var(--space-5);">IKEA, Argos, Wayfair and all major brands. Wardrobe systems, beds, shelving, desks — assembled to perfection.</p>
+            <a href="services.html#flatpack" class="text-brass font-semibold text-sm" style="display:flex;align-items:center;gap:8px;">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="service-card card-body-lg" data-reveal="up" data-delay="100">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="13" rx="2"/><polyline points="17 7 17 2 7 2 7 7"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+            </div>
+            <h3 class="text-xl" style="font-family:var(--font-serif);margin-bottom:var(--space-3);">TV Wall Mounting</h3>
+            <p class="text-sm text-secondary" style="line-height:1.8;margin-bottom:var(--space-5);">All screen sizes. Flush or articulating mounts. Full cable concealment for a clean, architectural finish.</p>
+            <a href="services.html#tv" class="text-brass font-semibold text-sm" style="display:flex;align-items:center;gap:8px;">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="service-card card-body-lg" data-reveal="up" data-delay="200">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/><line x1="4" y1="12" x2="10" y2="12"/><line x1="14" y1="12" x2="20" y2="12"/></svg>
+            </div>
+            <h3 class="text-xl" style="font-family:var(--font-serif);margin-bottom:var(--space-3);">Shelf Installation</h3>
+            <p class="text-sm text-secondary" style="line-height:1.8;margin-bottom:var(--space-5);">Floating shelves, alcove shelving, custom bracket systems. Wall-anchored to stud or masonry with professional precision.</p>
+            <a href="services.html#shelves" class="text-brass font-semibold text-sm" style="display:flex;align-items:center;gap:8px;">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Service 4 -->
+          <article class="service-card card-body-lg" data-reveal="up" data-delay="300">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="text-xl" style="font-family:var(--font-serif);margin-bottom:var(--space-3);">Kitchen Fitting</h3>
+            <p class="text-sm text-secondary" style="line-height:1.8;margin-bottom:var(--space-5);">Modular kitchen cabinet installation from supply-and-fit to fitting-only. Precision alignment for flawless results.</p>
+            <a href="services.html#kitchen" class="text-brass font-semibold text-sm" style="display:flex;align-items:center;gap:8px;">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 3: ABOUT BRAND TEASER
+    ═══════════════════════════════════════════════ -->
+    <section class="section bg-secondary" aria-labelledby="about-teaser-heading">
+      <div class="container">
+        <div class="about-split" data-reveal="scale">
+          <div class="about-split-image">
+            <img src="images/about-team.jpg" alt="ASSEMBLIO professional installation team in a luxury apartment" loading="lazy">
+          </div>
+          <div class="about-split-content">
+            <div class="section-label" style="color:var(--brass-light);">Our Story</div>
+            <h2 id="about-teaser-heading" class="text-5xl text-inverse" style="margin-bottom:var(--space-6);">
+              Crafted with<br><em style="color:var(--brass-light);">Purpose.</em><br>Installed with<br>Precision.
+            </h2>
+            <p style="color:rgba(247,243,235,0.65);font-size:var(--text-base);line-height:1.8;margin-bottom:var(--space-8);max-width:400px;">
+              ASSEMBLIO was founded on a singular belief: your home deserves expert hands. With over a decade of experience, our certified installers bring architectural-grade precision to every project — from a single shelf to an entire kitchen.
+            </p>
+            <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;">
+              <a href="about.html" class="btn btn-primary">Meet the Team</a>
+              <a href="contact.html" class="btn btn-light">Get a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 4: STATS COUNTER
+    ═══════════════════════════════════════════════ -->
+    <section class="stats-section section-sm" aria-label="Company statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card stat-divider" data-reveal="up">
+            <div class="stat-number">
+              <span class="counter-number" data-counter="5000" data-duration="2200">5000</span>
+              <span class="stat-plus">+</span>
+            </div>
+            <div class="stat-label">Homes Served</div>
+          </div>
+          <div class="stat-card stat-divider" data-reveal="up" data-delay="100">
+            <div class="stat-number">
+              <span class="counter-number" data-counter="98" data-duration="1800">98</span>
+              <span class="stat-plus">%</span>
+            </div>
+            <div class="stat-label">5-Star Reviews</div>
+          </div>
+          <div class="stat-card stat-divider" data-reveal="up" data-delay="200">
+            <div class="stat-number">
+              <span class="counter-number" data-counter="12" data-duration="1500">12</span>
+              <span class="stat-plus">+</span>
+            </div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card stat-divider" data-reveal="up" data-delay="300">
+            <div class="stat-number">
+              <span class="counter-number" data-counter="48" data-duration="1600">48</span>
+              <span class="stat-plus">h</span>
+            </div>
+            <div class="stat-label">Avg. Response Time</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 5: PROJECT GALLERY
+    ═══════════════════════════════════════════════ -->
+    <section class="section bg-primary" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:var(--space-12);">
+          <div class="section-label" style="justify-content:center;" data-reveal="up">Our Work</div>
+          <h2 id="gallery-heading" class="text-5xl" data-reveal="up" data-delay="100">Projects We're Proud Of</h2>
+          <p class="text-secondary" style="max-width:500px;margin:var(--space-4) auto 0;" data-reveal="up" data-delay="200">Every project tells a story of precision, care, and architectural vision.</p>
+        </div>
+
+        <div class="gallery-masonry" data-reveal="up">
+          <div class="gallery-item img-zoom-wrap" data-gallery-item>
+            <img src="images/gallery1.jpg" alt="Custom luxury home office with built-in walnut shelving system" loading="lazy">
+          </div>
+          <div class="gallery-item img-zoom-wrap" data-gallery-item>
+            <img src="images/gallery2.jpg" alt="Luxury walk-in wardrobe with brass handles and LED lighting" loading="lazy">
+          </div>
+          <div class="gallery-item img-zoom-wrap" data-gallery-item>
+            <img src="images/gallery3.jpg" alt="Premium built-in bookcase wall unit with stone center panel" loading="lazy">
+          </div>
+          <div class="gallery-item img-zoom-wrap" data-gallery-item>
+            <img src="images/hero3.jpg" alt="Modular kitchen with graphite cabinets and brass hardware" loading="lazy">
+          </div>
+          <div class="gallery-item img-zoom-wrap" data-gallery-item>
+            <img src="images/service-tv.jpg" alt="Professional TV wall mounting in luxury living room" loading="lazy">
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top:var(--space-10);" data-reveal="up">
+          <a href="about.html" class="btn btn-secondary">View All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 6: TESTIMONIALS
+    ═══════════════════════════════════════════════ -->
+    <section class="section bg-secondary" aria-labelledby="testimonials-heading">
+      <div class="container-fluid">
+        <div class="container" style="padding-bottom:var(--space-10);">
+          <div class="flex items-end justify-between" style="flex-wrap:wrap;gap:var(--space-5);">
+            <div>
+              <div class="section-label" data-reveal="left">Client Reviews</div>
+              <h2 id="testimonials-heading" class="text-4xl" data-reveal="up" data-delay="100">
+                What Our Clients Say
+              </h2>
+            </div>
+            <div class="flex gap-3" data-reveal="right">
+              <div class="stat-number" style="flex-direction:column;align-items:flex-end;">
+                <span style="font-family:var(--font-serif);font-size:var(--text-4xl);color:var(--brass);">4.9</span>
+                <div class="stars">
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <p style="font-size:var(--text-xs);color:var(--text-muted);">2,400+ Reviews</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-track-outer" id="testimonials-scroll" role="region" aria-label="Customer testimonials">
+          <div class="testimonials-track" style="padding-left:var(--space-6);padding-right:var(--space-6);">
+            <article class="testimonial-card">
+              <div class="stars">
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="testimonial-text">"Absolutely outstanding service. The team assembled our entire IKEA PAX wardrobe system in 4 hours — perfectly level, not a single scratch. We've used ASSEMBLIO twice now and won't use anyone else."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar-placeholder">S</div>
+                <div>
+                  <div class="author-name">Sarah Mitchell</div>
+                  <div class="author-role">Homeowner, London</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="stars">
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="testimonial-text">"Had a 75" TV mounted on a challenging plasterboard wall. The cable management is invisible — exactly what we wanted. The team arrived on time, were impeccably professional, and left no mess whatsoever."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar-placeholder">J</div>
+                <div>
+                  <div class="author-name">James Okafor</div>
+                  <div class="author-role">Interior Designer, Manchester</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="stars">
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="testimonial-text">"The kitchen fitting was flawless. Every cabinet is perfectly level, every gap is sealed. They even noticed a faulty hinge in one of the units and replaced it on the spot. Total professionals."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar-placeholder">A</div>
+                <div>
+                  <div class="author-name">Amira Patel</div>
+                  <div class="author-role">Property Developer, Birmingham</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="stars">
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="testimonial-text">"Booked for floating shelves in our alcove and couldn't be happier. They're level, solid, and beautifully finished. The team even suggested a better layout than I'd originally planned — great design sense."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar-placeholder">T</div>
+                <div>
+                  <div class="author-name">Thomas Chen</div>
+                  <div class="author-role">Architect, Edinburgh</div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="navbar-logo" style="margin-bottom:var(--space-5);display:inline-flex;">
+            <div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div>
+            <div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div>
+          </a>
+          <p class="footer-desc">London's most trusted furniture assembly and installation specialists. Precision, professionalism, and premium finishes — guaranteed.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="social-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Google Reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Services</p>
+          <ul class="footer-links">
+            <li><a href="services.html#flatpack" class="footer-link">Flat-Pack Assembly</a></li>
+            <li><a href="services.html#tv" class="footer-link">TV Wall Mounting</a></li>
+            <li><a href="services.html#shelves" class="footer-link">Shelf Installation</a></li>
+            <li><a href="services.html#kitchen" class="footer-link">Kitchen Fitting</a></li>
+            <li><a href="home2.html" class="footer-link">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Company</p>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="blog.html" class="footer-link">Blog & Tips</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="sitemap.html" class="footer-link">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Contact</p>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>24 Craftsman Lane, London, E1 6AW</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.58 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16c.11 0 .21.01.2.92z"/></svg>
+            <a href="tel:+442071234567" style="color:inherit;">+44 207 123 4567</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:hello@assemblio.co.uk" style="color:inherit;">hello@assemblio.co.uk</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom" style="padding:0 var(--space-6) var(--space-6);">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);width:100%;max-width:var(--container-max);">
+        <p class="footer-copy">&copy; 2026 ASSEMBLIO Ltd. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+  <script>
+    // Testimonials drag scroll
+    const track = document.getElementById('testimonials-scroll');
+    if (track) {
+      let isDown = false, startX, scrollLeft;
+      track.addEventListener('mousedown', (e) => { isDown = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; });
+      track.addEventListener('mouseleave', () => isDown = false);
+      track.addEventListener('mouseup', () => isDown = false);
+      track.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - track.offsetLeft;
+        track.scrollLeft = scrollLeft - (x - startX);
+      });
+    }
+  </script>
+</body>
+</html>
