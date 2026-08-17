@@ -9,7 +9,13 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <style>
-    .legal-hero { padding-top:calc(var(--navbar-h) + var(--space-16)); padding-bottom:var(--space-12); background:var(--bg-secondary); }
+    .legal-hero { padding-top:calc(var(--navbar-h) + var(--space-16)); padding-bottom:var(--space-12); background:var(--graphite); }
+    [data-theme="dark"] .legal-hero { background:var(--bg-secondary); }
+    .legal-hero .breadcrumb a { color:rgba(247,243,235,0.6); }
+    .legal-hero .breadcrumb-sep { background:rgba(247,243,235,0.3); }
+    .legal-hero .breadcrumb-current { color:var(--brass-light); }
+    .legal-hero h1 { color:var(--ivory); }
+    .legal-hero p { color:rgba(247,243,235,0.6); }
     .legal-layout { display:grid; grid-template-columns:240px 1fr; gap:var(--space-12); align-items:start; }
     .legal-sidebar { position:sticky; top:calc(var(--navbar-h-scroll) + var(--space-6)); }
     .legal-toc { background:var(--bg-secondary); border-radius:var(--radius-xl); padding:var(--space-6); border:1px solid var(--border); }
@@ -32,7 +38,7 @@
 <body>
   <div id="page-loader" class="page-loader" aria-hidden="true"><div class="loader-logo"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
 
-  <nav id="navbar" class="navbar scrolled" data-transparent="false" role="navigation" aria-label="Main navigation">
+  <nav id="navbar" class="navbar navbar-dark scrolled" data-transparent="false" role="navigation" aria-label="Main navigation">
     <div class="navbar-inner"><a href="index.html" class="navbar-logo" aria-label="ASSEMBLIO Home"><div class="logo-mark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="18" y="4" width="10" height="10" rx="1"/><rect x="4" y="18" width="10" height="10" rx="1"/><rect x="18" y="18" width="10" height="10" rx="1"/></svg></div><div class="logo-text"><span class="logo-name">ASSEMBLIO</span><span class="logo-tagline">Premium Installation</span></div></a>
       <ul class="nav-links" role="list"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></li><li class="nav-item"><a href="about.html" class="nav-link">About</a></li><li class="nav-item"><a href="services.html" class="nav-link">Services</a></li><li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li><li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li></ul>
       <div class="nav-actions"><button class="nav-icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode"><svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><button class="nav-icon-btn" data-dir-toggle aria-label="Toggle text direction" title="Switch to RTL"><span class="dir-label" style="font-size:9px;font-weight:800;letter-spacing:0.05em;">RTL</span></button><a href="contact.html" class="btn btn-primary btn-sm">Book Now</a></div>
