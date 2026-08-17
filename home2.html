@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="css/animations.css">
   <style>
     .hero-full {
-      min-height: 100vh;
+      height: 100vh;
+      min-height: 700px;
       background: var(--graphite);
       position: relative;
       display: flex;
@@ -29,8 +30,17 @@
       z-index: 2;
       max-width: var(--container-max);
       margin: 0 auto;
-      padding: var(--space-24) var(--space-6);
+      padding: 0 var(--space-6);
       width: 100%;
+      text-align: center;
+    }
+    .hero-full-content h1,
+    .hero-full-content p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-full-content > div {
+      justify-content: center;
     }
     .featured-card {
       background: var(--graphite);
@@ -149,31 +159,31 @@
     <section class="hero-full" aria-labelledby="h2-hero-heading">
       <div class="hero-full-bg"></div>
       <div class="hero-full-content">
-        <div class="badge badge-brass" style="margin-bottom:var(--space-6);" data-reveal="fade">
+        <div class="badge badge-brass" style="margin-bottom:var(--space-6);letter-spacing:0.25em;" data-reveal="fade">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           4.9/5 Average Rating
         </div>
-        <h1 id="h2-hero-heading" class="text-7xl text-inverse tracking-tight" style="max-width:800px;margin-bottom:var(--space-6);" data-reveal="up">
-          Premium Home<br>Installation<br><span class="text-gradient-brass">Redefined.</span>
+        <h1 id="h2-hero-heading" class="text-6xl text-inverse tracking-tight" style="max-width:1000px;font-size:clamp(2.5rem,5.5vw,5rem);line-height:1.1;letter-spacing:-0.03em;margin-bottom:var(--space-6);" data-reveal="up">
+          Home Installation<br><span class="text-gradient-brass">Redefined.</span>
         </h1>
-        <p class="text-inverse" style="font-size:var(--text-xl);max-width:540px;line-height:1.7;opacity:0.7;margin-bottom:var(--space-10);" data-reveal="up" data-delay="200">Transparent pricing. Expert craftsmen. Same-week availability. The installation experience your home deserves.</p>
+        <p class="text-inverse" style="font-size:clamp(1rem,1.4vw,1.15rem);max-width:620px;line-height:1.75;opacity:0.75;margin-bottom:var(--space-10);" data-reveal="up" data-delay="200">Transparent pricing. Expert craftsmen. Same-week availability. The installation experience your home deserves.</p>
         <div class="flex gap-4" style="flex-wrap:wrap;" data-reveal="up" data-delay="350">
-          <a href="contact.html" class="btn btn-primary btn-xl">Get Instant Quote</a>
-          <a href="services.html" class="btn btn-light btn-xl">Explore Services</a>
+          <a href="contact.html" class="btn btn-primary btn-lg">Get Instant Quote</a>
+          <a href="services.html" class="btn btn-light btn-lg">Explore Services</a>
         </div>
 
         <!-- Floating Badges -->
-        <div style="display:flex;gap:var(--space-5);margin-top:var(--space-12);flex-wrap:wrap;" data-reveal="up" data-delay="500">
-          <div class="glass" style="padding:var(--space-4) var(--space-5);border-radius:var(--radius-lg);display:flex;align-items:center;gap:var(--space-3);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <div style="display:flex;gap:var(--space-5);margin-top:var(--space-8);flex-wrap:wrap;" data-reveal="up" data-delay="500">
+          <div class="glass" style="padding:var(--space-3) var(--space-4);border-radius:var(--radius-lg);display:flex;align-items:center;gap:var(--space-3);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
             <span style="color:var(--ivory);font-size:var(--text-sm);font-weight:600;">Same-Day Booking</span>
           </div>
-          <div class="glass" style="padding:var(--space-4) var(--space-5);border-radius:var(--radius-lg);display:flex;align-items:center;gap:var(--space-3);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="glass" style="padding:var(--space-3) var(--space-4);border-radius:var(--radius-lg);display:flex;align-items:center;gap:var(--space-3);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <span style="color:var(--ivory);font-size:var(--text-sm);font-weight:600;">Fully Insured</span>
           </div>
-          <div class="glass" style="padding:var(--space-4) var(--space-5);border-radius:var(--radius-lg);display:flex;align-items:center;gap:var(--space-3);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="glass" style="padding:var(--space-3) var(--space-4);border-radius:var(--radius-lg);display:flex;align-items:center;gap:var(--space-3);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <span style="color:var(--ivory);font-size:var(--text-sm);font-weight:600;">On-Time Guarantee</span>
           </div>
         </div>
