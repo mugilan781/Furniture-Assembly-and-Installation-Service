@@ -1856,6 +1856,16 @@
 .nav-icon-btn:hover { border-color:rgba(176,141,87,0.5); color:var(--brass); background:rgba(176,141,87,0.08); }
 .dir-label { font-size:9px; font-weight:800; line-height:1; }
 
+/* Light mode: navbar-dark pages use the same light scrolled bar as all other pages */
+[data-theme="light"] .navbar-dark.scrolled {
+  background: rgba(247,243,235,0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+[data-theme="light"] .navbar-dark.scrolled .nav-link:hover,
+[data-theme="light"] .navbar-dark.scrolled .nav-link.active { color: var(--brass); }
+[data-theme="light"] .navbar-dark.scrolled .hamburger span { background: var(--text-primary); }
+
 
 /* ─── EXTRA HELPERS ─── */
 .slider-prev, .slider-next { }
