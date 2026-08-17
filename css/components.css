@@ -1892,6 +1892,7 @@
   .nav-actions .btn { display: none; }
   .nav-actions { margin-inline-start: auto; }
   .navbar-inner { gap: var(--space-3); }
+  .hamburger { height: 36px; justify-content: center; }
 }
 @media (max-width: 640px) {
   .navbar-inner { padding-left: var(--space-4); padding-right: var(--space-4); }
