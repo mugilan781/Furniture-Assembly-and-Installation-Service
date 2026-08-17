@@ -214,21 +214,48 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1.5px solid rgba(247,243,235,0.25);
-  background: rgba(247,243,235,0.08);
-  backdrop-filter: blur(10px);
-  display: flex;
+  border: 1.5px solid var(--border);
+  background: rgba(176,141,87,0.08);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--ivory);
+  color: var(--text-primary);
   transition: all var(--transition-base);
 }
 
-.slider-arrow:hover {
-  background: rgba(176,141,87,0.3);
-  border-color: rgba(176,141,87,0.5);
-  transform: scale(1.05);
+.slider-arrow:hover:not(:disabled) {
+  background: var(--brass);
+  border-color: var(--brass);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(176,141,87,0.3);
+}
+
+.slider-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .slider-arrow {
+  background: rgba(247,243,235,0.08);
+  border-color: rgba(247,243,235,0.18);
+  color: var(--ivory);
+}
+
+[data-theme="dark"] .slider-arrow:hover:not(:disabled) {
+  background: var(--brass);
+  border-color: var(--brass);
+  color: white;
+}
+
+.hero-slider .slider-arrow {
+  background: rgba(247,243,235,0.12);
+  border-color: rgba(247,243,235,0.25);
+  color: var(--ivory);
+  backdrop-filter: blur(10px);
 }
 
 .slider-arrow svg { width: 18px; height: 18px; }

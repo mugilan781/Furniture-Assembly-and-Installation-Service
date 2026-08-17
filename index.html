@@ -499,10 +499,10 @@
               What Our Clients Say
             </h2>
           </div>
-          <div class="flex gap-4 items-center" data-reveal="right" style="flex-wrap:wrap;">
-            <div class="stat-number" style="flex-direction:column;align-items:flex-end;">
+          <div data-reveal="right">
+            <div class="stat-number" style="flex-direction:column;align-items:flex-end;text-align:right;">
               <span style="font-family:var(--font-serif);font-size:var(--text-4xl);color:var(--brass);line-height:1;">4.9</span>
-              <div class="stars" style="margin-bottom:2px;">
+              <div class="stars" style="margin-bottom:2px;justify-content:flex-end;">
                 <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -510,14 +510,6 @@
                 <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               </div>
               <p style="font-size:var(--text-xs);color:var(--text-muted);">2,400+ Reviews</p>
-            </div>
-            <div class="flex gap-2" style="align-items:center;">
-              <button class="slider-arrow" id="testi-prev" aria-label="Previous testimonials" disabled>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-              </button>
-              <button class="slider-arrow" id="testi-next" aria-label="Next testimonials">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-              </button>
             </div>
           </div>
         </div>
@@ -604,6 +596,15 @@
               </div>
             </article>
           </div>
+        </div>
+
+        <div class="flex justify-center items-center gap-4" style="margin-top:var(--space-8);" data-reveal="up" data-delay="300">
+          <button class="slider-arrow" id="testi-prev" aria-label="Previous testimonials" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="slider-arrow" id="testi-next" aria-label="Next testimonials">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
       </div>
     </section>
