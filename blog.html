@@ -18,6 +18,10 @@
     .featured-post-img img { width:100%; height:100%; object-fit:cover; }
     .featured-post-body { padding:var(--space-10) var(--space-8); display:flex; flex-direction:column; justify-content:center; }
     .featured-post-body .badge { align-self:flex-start; }
+    .stats-table { display:flex; flex-direction:column; border:1px solid var(--border); border-radius:var(--radius-xl); background:var(--bg-primary); overflow:hidden; }
+    [data-theme="dark"] .stats-table { background:var(--bg-secondary); }
+    .stats-row { display:flex; justify-content:space-between; align-items:center; padding:var(--space-5) var(--space-6); border-bottom:1px solid var(--border); }
+    .stats-row-last { border-bottom:0; }
     .blog-3-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6); }
     .categories-strip { display:flex; gap:var(--space-3); flex-wrap:wrap; margin-bottom:var(--space-10); }
     .cat-pill { padding:var(--space-2) var(--space-5); border-radius:var(--radius-full); border:1.5px solid var(--border); font-size:var(--text-sm); font-weight:600; cursor:pointer; transition:all 0.25s; background:none; color:var(--text-secondary); }
@@ -113,71 +117,60 @@
         </div>
 
         <div class="blog-3-grid" data-stagger-grid>
-          <article class="blog-card" data-reveal="up">
+          <a href="blog-details.html" class="blog-card" data-reveal="up">
             <div class="blog-card-image img-zoom-wrap"><img src="images/blog1.jpg" alt="Furniture planning mood board" loading="lazy"></div>
             <div class="blog-card-body">
               <p class="blog-category">Interior Design</p>
-              <h3 class="blog-title"><a href="blog-details.html">How to Plan Your Furniture Layout Before Assembly Day</a></h3>
+              <h3 class="blog-title">How to Plan Your Furniture Layout Before Assembly Day</h3>
               <p class="blog-excerpt">Save time and avoid costly mistakes with these expert pre-assembly planning techniques.</p>
               <div class="blog-meta"><span>Aug 10, 2026</span><div class="blog-meta-dot"></div><span>5 min read</span></div>
             </div>
-          </article>
-          <article class="blog-card" data-reveal="up" data-delay="80">
+          </a>
+          <a href="blog-details.html" class="blog-card" data-reveal="up" data-delay="80">
             <div class="blog-card-image img-zoom-wrap"><img src="images/service-tv.jpg" alt="TV mounting guide" loading="lazy"></div>
             <div class="blog-card-body">
               <p class="blog-category">TV Mounting</p>
-              <h3 class="blog-title"><a href="blog-details.html">The Ultimate Guide to Choosing a TV Wall Mount</a></h3>
+              <h3 class="blog-title">The Ultimate Guide to Choosing a TV Wall Mount</h3>
               <p class="blog-excerpt">Fixed, tilting, or full-motion? Discover which mount type suits your room and wall.</p>
               <div class="blog-meta"><span>Aug 3, 2026</span><div class="blog-meta-dot"></div><span>7 min read</span></div>
             </div>
-          </article>
-          <article class="blog-card" data-reveal="up" data-delay="160">
+          </a>
+          <a href="blog-details.html" class="blog-card" data-reveal="up" data-delay="160">
             <div class="blog-card-image img-zoom-wrap"><img src="images/service-shelf.jpg" alt="Shelf installation tips" loading="lazy"></div>
             <div class="blog-card-body">
-              <p class="blog-category">Installation Tips</p>
-              <h3 class="blog-title"><a href="blog-details.html">Why Floating Shelves Need Professional Installation</a></h3>
+              <p class="blog-category">How-To</p>
+              <h3 class="blog-title">Why Floating Shelves Need Professional Installation</h3>
               <p class="blog-excerpt">A badly hung shelf can become a safety hazard. Here's what a professional checks first.</p>
               <div class="blog-meta"><span>Jul 28, 2026</span><div class="blog-meta-dot"></div><span>4 min read</span></div>
             </div>
-          </article>
-          <article class="blog-card" data-reveal="up" data-delay="240">
+          </a>
+          <a href="blog-details.html" class="blog-card" data-reveal="up" data-delay="240">
             <div class="blog-card-image img-zoom-wrap"><img src="images/service-kitchen.jpg" alt="Kitchen installation guide" loading="lazy"></div>
             <div class="blog-card-body">
               <p class="blog-category">Kitchen</p>
-              <h3 class="blog-title"><a href="blog-details.html">10 Things to Check Before Your Kitchen Is Fitted</a></h3>
+              <h3 class="blog-title">10 Things to Check Before Your Kitchen Is Fitted</h3>
               <p class="blog-excerpt">Avoid costly surprises. Our checklist ensures your kitchen fitting goes smoothly from day one.</p>
               <div class="blog-meta"><span>Jul 20, 2026</span><div class="blog-meta-dot"></div><span>6 min read</span></div>
             </div>
-          </article>
-          <article class="blog-card" data-reveal="up" data-delay="320">
+          </a>
+          <a href="blog-details.html" class="blog-card" data-reveal="up" data-delay="320">
             <div class="blog-card-image img-zoom-wrap"><img src="images/gallery1.jpg" alt="Home office setup" loading="lazy"></div>
             <div class="blog-card-body">
               <p class="blog-category">Interior Design</p>
-              <h3 class="blog-title"><a href="blog-details.html">Creating a Luxury Home Office on a Budget</a></h3>
+              <h3 class="blog-title">Creating a Luxury Home Office on a Budget</h3>
               <p class="blog-excerpt">You don't need to spend thousands to achieve a high-end home office aesthetic. Here's how.</p>
               <div class="blog-meta"><span>Jul 14, 2026</span><div class="blog-meta-dot"></div><span>8 min read</span></div>
             </div>
-          </article>
-          <article class="blog-card" data-reveal="up" data-delay="400">
+          </a>
+          <a href="blog-details.html" class="blog-card" data-reveal="up" data-delay="400">
             <div class="blog-card-image img-zoom-wrap"><img src="images/gallery3.jpg" alt="Built-in bookcase installation" loading="lazy"></div>
             <div class="blog-card-body">
               <p class="blog-category">Assembly Guides</p>
-              <h3 class="blog-title"><a href="blog-details.html">IKEA vs Bespoke: Which Wardrobe System is Right for You?</a></h3>
+              <h3 class="blog-title">IKEA vs Bespoke: Which Wardrobe System is Right for You?</h3>
               <p class="blog-excerpt">A thorough comparison of modular flat-pack systems versus custom-built wardrobe solutions.</p>
               <div class="blog-meta"><span>Jul 7, 2026</span><div class="blog-meta-dot"></div><span>9 min read</span></div>
             </div>
-          </article>
-        </div>
-
-        <div class="flex justify-center" style="margin-top:var(--space-10);" data-reveal="up">
-          <div class="pagination">
-            <button class="page-btn active">1</button>
-            <button class="page-btn">2</button>
-            <button class="page-btn">3</button>
-            <button class="page-btn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -207,17 +200,17 @@
           <div data-reveal="right">
             <div class="section-label">Quick Stats</div>
             <h3 class="text-2xl" style="font-family:var(--font-serif);margin-bottom:var(--space-6);">The Numbers</h3>
-            <div style="display:flex;flex-direction:column;gap:var(--space-4);">
-              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--space-4);border-bottom:1px solid var(--border-light);">
+            <div class="stats-table">
+              <div class="stats-row">
                 <span class="text-sm text-secondary">Articles Published</span><span class="font-bold text-brass">48</span>
               </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--space-4);border-bottom:1px solid var(--border-light);">
+              <div class="stats-row">
                 <span class="text-sm text-secondary">Monthly Readers</span><span class="font-bold text-brass">12,400</span>
               </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--space-4);border-bottom:1px solid var(--border-light);">
+              <div class="stats-row">
                 <span class="text-sm text-secondary">Expert Authors</span><span class="font-bold text-brass">6</span>
               </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div class="stats-row stats-row-last">
                 <span class="text-sm text-secondary">Categories</span><span class="font-bold text-brass">8</span>
               </div>
             </div>
@@ -245,33 +238,6 @@
       </div>
     </section>
 
-    <!-- SECTION 6: RECENT POSTS TICKER -->
-    <section class="section-sm bg-primary" aria-label="Recent posts ticker">
-      <div class="container" style="margin-bottom:var(--space-4);">
-        <div class="flex items-center justify-between" style="flex-wrap:wrap;gap:var(--space-4);">
-          <div class="section-label" style="margin-bottom:0;">Just Published</div>
-          <a href="#" class="text-brass text-sm font-semibold" style="display:flex;align-items:center;gap:8px;">View All →</a>
-        </div>
-      </div>
-      <div class="container">
-        <div class="ticker-wrap" data-reveal="up">
-          <div class="ticker-track marquee-track">
-            <div class="ticker-item"><div class="ticker-dot"></div><span>IKEA PAX vs BRIMNES — Which Wardrobe is Right for You?</span></div>
-            <div class="ticker-item"><div class="ticker-dot"></div><span>5 Mistakes People Make When Mounting a TV</span></div>
-            <div class="ticker-item"><div class="ticker-dot"></div><span>How to Style Floating Shelves Like an Interior Designer</span></div>
-            <div class="ticker-item"><div class="ticker-dot"></div><span>The Best Modular Kitchen Ranges of 2026 Reviewed</span></div>
-            <div class="ticker-item"><div class="ticker-dot"></div><span>Why You Should Never Use Rawl Plugs in Plasterboard</span></div>
-            <div class="ticker-item"><div class="ticker-dot"></div><span>How Long Does a Full Kitchen Fitting Take?</span></div>
-            <div class="ticker-item"><div class="ticker-dot"></div><span>IKEA PAX vs BRIMNES — Which Wardrobe is Right for You?</span></div>
-            <div class="ticker-item"><div class="ticker-dot"></div><span>5 Mistakes People Make When Mounting a TV</span></div>
-            <div class="ticker-item"><div class="ticker-dot"></div><span>How to Style Floating Shelves Like an Interior Designer</span></div>
-            <div class="ticker-item"><div class="ticker-dot"></div><span>The Best Modular Kitchen Ranges of 2026 Reviewed</span></div>
-            <div class="ticker-item"><div class="ticker-dot"></div><span>Why You Should Never Use Rawl Plugs in Plasterboard</span></div>
-            <div class="ticker-item"><div class="ticker-dot"></div><span>How Long Does a Full Kitchen Fitting Take?</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer" role="contentinfo">
@@ -350,6 +316,17 @@
       pill.addEventListener('click', function() {
         document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
         this.classList.add('active');
+        const filter = this.textContent.trim();
+        document.querySelectorAll('.blog-card').forEach(card => {
+          const cat = card.querySelector('.blog-category').textContent.trim();
+          const show = filter === 'All' || cat === filter;
+          card.style.display = show ? '' : 'none';
+          if (show) {
+            card.classList.add('revealed');
+            card.style.opacity = '0';
+            requestAnimationFrame(() => requestAnimationFrame(() => card.style.opacity = '1'));
+          }
+        });
       });
     });
   </script>
