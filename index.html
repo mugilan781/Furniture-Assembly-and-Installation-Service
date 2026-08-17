@@ -139,6 +139,7 @@
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-number { font-size: var(--text-4xl); }
       .stat-divider:nth-child(2) { border-right: none; }
       .stat-divider:nth-child(3) { border-top: 1px solid var(--border); }
       .about-split { grid-template-columns: 1fr; min-height: auto; }
@@ -156,6 +157,9 @@
 
     @media (max-width: 480px) {
       .gallery-masonry { grid-template-columns: 1fr; }
+      .stat-number { font-size: var(--text-3xl); }
+      .stat-plus { font-size: var(--text-xl); }
+      .testimonials-track .testimonial-card { width: 100%; }
     }
   </style>
 </head>

@@ -676,3 +676,9 @@
   .hero-slide-bg { transition: none !important; }
   .hero-slides { transition: none !important; }
 }
+
+/* ─── HERO CONTROLS: MOBILE / TABLET ─── */
+@media (max-width: 1024px) {
+  .slide-counter,
+  .scroll-indicator { display: none; }
+}

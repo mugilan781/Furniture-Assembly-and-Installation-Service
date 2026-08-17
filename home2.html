@@ -96,16 +96,24 @@
       padding: var(--space-16);
       text-align: center;
     }
+    .blog-preview-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6); }
     @media (max-width: 1024px) {
       .featured-card { grid-template-columns: 1fr; }
       .featured-card-img { aspect-ratio: 16/9; }
       .process-timeline { grid-template-columns: repeat(2, 1fr); }
       .process-timeline::before { display: none; }
       .pricing-table-grid { grid-template-columns: 1fr; }
+      .blog-preview-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-full-content { padding-top: calc(var(--navbar-h) + var(--space-8)); }
     }
     @media (max-width: 768px) {
       .process-timeline { grid-template-columns: 1fr; }
       .newsletter-section { padding: var(--space-8); }
+    }
+    @media (max-width: 640px) {
+      .blog-preview-grid { grid-template-columns: 1fr; }
+      .hero-full { align-items: flex-start; }
+      .hero-full-content { padding-top: calc(var(--navbar-h) + var(--space-6)); padding-bottom: var(--space-12); }
     }
   </style>
 </head>
@@ -401,7 +409,7 @@
           <a href="blog.html" class="btn btn-secondary" data-reveal="right">View All Articles</a>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);" data-stagger-grid>
+        <div class="blog-preview-grid" data-stagger-grid>
           <a href="blog-details.html?id=2" class="blog-card" style="text-decoration:none;" data-reveal="up">
             <div class="blog-card-image img-zoom-wrap">
               <img src="images/blog1.jpg" alt="Interior design mood board for furniture planning" loading="lazy">
