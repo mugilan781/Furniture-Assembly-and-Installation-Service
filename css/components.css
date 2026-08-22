@@ -1950,13 +1950,14 @@
 .mobile-menu .mobile-nav-link { color: rgba(247,243,235,0.85); }
 .mobile-menu .mobile-nav-link:hover { color: var(--brass-light); background: rgba(176,141,87,0.12); }
 
-/* ─── HIDE SCROLLBARS FOR MOBILE MENU IN ALL BROWSERS AT ALL RESOLUTIONS ─── */
+/* ─── HIDE SCROLLBARS & PREVENT BACKGROUND SCROLL FOR MOBILE MENU ─── */
 .mobile-menu,
 .mobile-menu *,
 .mobile-nav-links,
 .mobile-nav-links * {
   -ms-overflow-style: none !important;
   scrollbar-width: none !important;
+  overscroll-behavior: contain;
 }
 
 .mobile-menu::-webkit-scrollbar,
@@ -1969,12 +1970,17 @@
   background: transparent !important;
 }
 
+html.mobile-menu-open,
 body.mobile-menu-open {
   overflow: hidden !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  touch-action: none;
   -ms-overflow-style: none !important;
   scrollbar-width: none !important;
 }
 
+html.mobile-menu-open::-webkit-scrollbar,
 body.mobile-menu-open::-webkit-scrollbar {
   display: none !important;
   width: 0 !important;
