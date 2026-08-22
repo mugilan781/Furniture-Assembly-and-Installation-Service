@@ -144,9 +144,15 @@
       .stat-divider:nth-child(2) { border-right: none; }
       .stat-divider:nth-child(3) { border-top: 1px solid var(--border); }
       .stat-divider:nth-child(4) { border-top: 1px solid var(--border); }
+      .about-split { grid-template-columns: 1fr 1fr; min-height: 420px; }
+      .about-split-content { padding: var(--space-8) var(--space-6); }
+      .about-split-content h2 { font-size: clamp(1.75rem, 3.2vw, 2.5rem) !important; margin-bottom: var(--space-4) !important; }
+      .about-split-content p { font-size: var(--text-sm) !important; margin-bottom: var(--space-5) !important; }
+    }
+
+    @media (max-width: 640px) {
       .about-split { grid-template-columns: 1fr; min-height: auto; }
       .about-split-image { aspect-ratio: 16/9; }
-      .about-split-content { padding: var(--space-10) var(--space-8); }
     }
 
     @media (max-width: 768px) {
