@@ -114,6 +114,7 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
     hamburger.classList.add('open');
     mobileMenu.classList.add('open');
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('mobile-menu-open');
     hamburger.setAttribute('aria-expanded', 'true');
   }
 
@@ -121,6 +122,7 @@ const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
     document.body.style.overflow = '';
+    document.body.classList.remove('mobile-menu-open');
     hamburger.setAttribute('aria-expanded', 'false');
   }
 

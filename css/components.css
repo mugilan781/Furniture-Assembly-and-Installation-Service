@@ -294,12 +294,17 @@
   right: 0;
   bottom: 0;
   background: var(--bg-primary);
-  z-index: 999;
+  z-index: 1100;
   padding: var(--space-8) var(--space-6);
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
   transition: transform 0.4s var(--ease-smooth);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 [data-theme="dark"] .mobile-menu { background: var(--bg-dark); }
@@ -311,6 +316,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: var(--space-12);
+  flex-shrink: 0;
 }
 
 .mobile-nav-links {
@@ -319,6 +325,10 @@
   gap: var(--space-2);
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .mobile-nav-link {
@@ -1707,15 +1717,15 @@
 .scroll-top svg { width:20px; height:20px; }
 
 /* ─── MOBILE MENU ─── */
-.mobile-menu { position:fixed; inset:0; z-index:1100; background:var(--graphite); display:flex; flex-direction:column; padding:var(--space-6); transform:translateX(100%); transition:transform 0.4s var(--ease-smooth); }
+.mobile-menu { position:fixed; inset:0; z-index:1100; background:var(--graphite); display:flex; flex-direction:column; padding:var(--space-6); transform:translateX(100%); transition:transform 0.4s var(--ease-smooth); overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; -ms-overflow-style:none; scrollbar-width:none; }
 .mobile-menu.open { transform:translateX(0); }
-.mobile-menu-header { display:flex; align-items:center; justify-content:space-between; padding-bottom:var(--space-8); border-bottom:1px solid rgba(247,243,235,0.08); margin-bottom:var(--space-8); }
-.mobile-nav-links { display:flex; flex-direction:column; gap:0; flex:1; }
+.mobile-menu-header { display:flex; align-items:center; justify-content:space-between; padding-bottom:var(--space-8); border-bottom:1px solid rgba(247,243,235,0.08); margin-bottom:var(--space-8); flex-shrink:0; }
+.mobile-nav-links { display:flex; flex-direction:column; gap:0; flex:1; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; -ms-overflow-style:none; scrollbar-width:none; }
 .mobile-nav-link { display:flex; align-items:center; justify-content:space-between; padding:var(--space-5) 0; border-bottom:1px solid rgba(247,243,235,0.06); font-family:var(--font-serif); font-size:var(--text-2xl); color:rgba(247,243,235,0.8); text-decoration:none; transition:color 0.2s; }
 .mobile-nav-link:hover { color:var(--brass-light); }
 .mobile-nav-link svg { color:rgba(247,243,235,0.3); transition:color 0.2s; }
 .mobile-nav-link:hover svg { color:var(--brass); }
-.mobile-menu-footer { padding-top:var(--space-8); border-top:1px solid rgba(247,243,235,0.08); }
+.mobile-menu-footer { padding-top:var(--space-8); border-top:1px solid rgba(247,243,235,0.08); flex-shrink:0; }
 
 /* ─── HAMBURGER ─── */
 .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:var(--space-2); border-radius:var(--radius-md); }
@@ -1878,7 +1888,6 @@
 
 
 /* ─── EXTRA HELPERS ─── */
-.slider-prev, .slider-next { }
 .btn-text { display: inline-flex; align-items: center; }
 .sitemap-category {
   background: var(--bg-secondary);
@@ -1940,4 +1949,35 @@
 .mobile-menu .nav-icon-btn:hover { color: var(--brass-light); background: rgba(176,141,87,0.12); border-color: rgba(176,141,87,0.5); }
 .mobile-menu .mobile-nav-link { color: rgba(247,243,235,0.85); }
 .mobile-menu .mobile-nav-link:hover { color: var(--brass-light); background: rgba(176,141,87,0.12); }
+
+/* ─── HIDE SCROLLBARS FOR MOBILE MENU IN ALL BROWSERS AT ALL RESOLUTIONS ─── */
+.mobile-menu,
+.mobile-menu *,
+.mobile-nav-links,
+.mobile-nav-links * {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.mobile-menu::-webkit-scrollbar,
+.mobile-menu *::-webkit-scrollbar,
+.mobile-nav-links::-webkit-scrollbar,
+.mobile-nav-links *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+body.mobile-menu-open {
+  overflow: hidden !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+body.mobile-menu-open::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
 
