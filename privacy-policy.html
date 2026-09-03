@@ -11,12 +11,9 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <style>
-    .legal-hero { padding-top:calc(var(--navbar-h) + var(--space-16)); padding-bottom:var(--space-12); background:var(--graphite); }
+    .legal-hero { padding-top:calc(var(--navbar-h) + var(--space-16)); padding-bottom:var(--space-12); background:var(--graphite); text-align:center; }
     [data-theme="dark"] .legal-hero { background:var(--bg-secondary); }
-    .legal-hero .breadcrumb a { color:rgba(247,243,235,0.6); }
-    .legal-hero .breadcrumb-sep { background:rgba(247,243,235,0.3); }
-    .legal-hero .breadcrumb-current { color:var(--brass-light); }
-    .legal-hero h1 { color:var(--ivory); }
+    .legal-hero h1 { color:var(--ivory); margin-left:auto; margin-right:auto; }
     .legal-hero p { color:rgba(247,243,235,0.6); }
     .legal-layout { display:grid; grid-template-columns:240px 1fr; gap:var(--space-12); align-items:start; }
     .legal-sidebar { position:sticky; top:calc(var(--navbar-h-scroll) + var(--space-6)); }
@@ -31,9 +28,6 @@
     .legal-content li { list-style:disc; }
     .legal-content a { color:var(--brass); text-decoration:underline; }
     .legal-highlight { background:rgba(176,141,87,0.07); border:1px solid rgba(176,141,87,0.15); border-radius:var(--radius-lg); padding:var(--space-5) var(--space-6); margin:var(--space-6) 0; }
-    .legal-hero { text-align:center; }
-    .legal-hero .breadcrumb { justify-content:center; }
-    .legal-hero h1 { margin-left:auto; margin-right:auto; }
     @media(max-width:1024px){ .legal-layout { grid-template-columns:1fr; } .legal-sidebar { position:static; } }
   </style>
 </head>
@@ -57,7 +51,6 @@
   <main>
     <div class="legal-hero">
       <div class="container">
-        <nav class="breadcrumb" style="margin-bottom:var(--space-6);" aria-label="Breadcrumb"><a href="index.html">Home</a><div class="breadcrumb-sep"></div><span class="breadcrumb-current">Privacy Policy</span></nav>
         <h1 class="text-5xl" style="margin-bottom:var(--space-4);" data-reveal="up">Privacy Policy</h1>
         <p class="text-secondary" data-reveal="up" data-delay="100">Last updated: <strong>1 August 2026</strong></p>
       </div>

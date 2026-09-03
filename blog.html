@@ -39,10 +39,6 @@
     .ticker-track { display:flex; gap:var(--space-8); width:max-content; animation:marqueeScroll 25s linear infinite; align-items:center; }
     .ticker-item { display:flex; align-items:center; gap:var(--space-4); color:rgba(247,243,235,0.65); font-size:var(--text-sm); font-weight:500; white-space:nowrap; }
     .ticker-dot { width:4px; height:4px; border-radius:50%; background:var(--brass); flex-shrink:0; }
-    .blog-hero .breadcrumb { justify-content:center; }
-    .blog-hero .breadcrumb a { color:rgba(247,243,235,0.6); }
-    .blog-hero .breadcrumb-current { color:var(--ivory); }
-    .blog-hero .breadcrumb-sep { background:rgba(247,243,235,0.3); }
     .blog-hero .section-label { justify-content:center; }
     .blog-hero p { margin-left:auto; margin-right:auto; }
     @media(max-width:1024px){
@@ -85,9 +81,8 @@
       <div class="blog-hero-bg" style="background-image:url('images/blog-hero-bg.jpg');"></div>
       <div class="blog-hero-accent"></div>
       <div class="container" style="padding-top:var(--space-16);padding-bottom:var(--space-16);">
-        <nav class="breadcrumb" style="margin-bottom:var(--space-6);" aria-label="Breadcrumb"><a href="index.html">Home</a><div class="breadcrumb-sep"></div><span class="breadcrumb-current">Blog</span></nav>
         <div style="text-align:center;">
-          <div class="section-label" style="color:var(--brass-light);" data-reveal="up">Expert Knowledge</div>
+          <div class="section-label" style="color:var(--brass-light);justify-content:center;" data-reveal="up">Expert Knowledge</div>
           <h1 id="blog-heading" class="text-5xl text-inverse tracking-tight" data-reveal="up" data-delay="100">The ASSEMBLIO<br><em style="color:var(--brass-light);">Journal</em></h1>
           <p class="text-inverse text-base" style="margin-top:var(--space-4);max-width:520px;opacity:0.8;line-height:1.7;" data-reveal="up" data-delay="200">Installation tips, design inspiration, brand guides, and home improvement ideas from our expert team.</p>
         </div>
