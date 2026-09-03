@@ -34,9 +34,9 @@
     html { scroll-padding-top: calc(var(--navbar-h-scroll) + 24px); }
     @media(max-width:1024px){
       .service-section { grid-template-columns:1fr 1fr; gap:var(--space-8); margin-bottom:var(--space-12); }
-      .service-content h2 { font-size:clamp(1.6rem, 3vw, 2.25rem) !important; margin-bottom:var(--space-3) !important; }
-      .service-content p { font-size:var(--text-sm) !important; margin-bottom:var(--space-3) !important; line-height:1.6 !important; }
-      .service-feature-list { gap:var(--space-2); margin:var(--space-4) 0; }
+      .service-content h2 { font-size:clamp(1.4rem, 2.5vw, 1.85rem) !important; margin-bottom:var(--space-2) !important; }
+      .service-content p { font-size:var(--text-sm) !important; margin-bottom:var(--space-2) !important; line-height:1.6 !important; }
+      .service-feature-list { gap:var(--space-2); margin:var(--space-3) 0; }
       .service-feature { font-size:13px; }
       .booking-form-grid { grid-template-columns:minmax(0,1fr); }
     }
@@ -72,7 +72,7 @@
       <div style="position:relative;z-index:2;width:100%;max-width:var(--container-max);margin:0 auto;padding:var(--space-32) var(--space-6) var(--space-16);">
         <nav class="breadcrumb" style="margin-bottom:var(--space-6);" aria-label="Breadcrumb"><a href="index.html" style="color:rgba(247,243,235,0.6);">Home</a><div class="breadcrumb-sep" style="background:rgba(247,243,235,0.3);"></div><span class="breadcrumb-current">Services</span></nav>
         <div class="section-label" style="color:var(--brass-light);" data-reveal="left">What We Offer</div>
-        <h1 id="services-page-heading" class="text-7xl text-inverse tracking-tight" style="max-width:640px;margin-bottom:var(--space-8);" data-reveal="up">Expert Installation<br>for Every Room</h1>
+        <h1 id="services-page-heading" class="text-5xl text-inverse tracking-tight" style="max-width:640px;margin-bottom:var(--space-6);" data-reveal="up">Expert Installation<br>for Every Room</h1>
         <div class="services-tabs-bar" data-reveal="up" data-delay="200">
           <a href="#flatpack" class="serv-tab">Flat-Pack Assembly</a>
           <a href="#tv" class="serv-tab">TV Mounting</a>
@@ -91,9 +91,9 @@
           </div>
           <div class="service-content" data-reveal="right">
             <div class="section-label">Service 01</div>
-            <h2 id="flatpack-heading" class="text-5xl" style="margin-bottom:var(--space-5);">Flat-Pack Assembly</h2>
-            <p class="text-secondary" style="font-size:var(--text-lg);line-height:1.8;margin-bottom:var(--space-4);">We assemble all flat-pack furniture — quickly, correctly, and safely. No more stripped screws or wobbly shelves.</p>
-            <p class="text-secondary text-sm" style="line-height:1.8;">Whether you have a single bedside table or an entire bedroom set, our team handles every brand and assembly system with professional precision.</p>
+            <h2 id="flatpack-heading" class="text-3xl" style="margin-bottom:var(--space-3);">Flat-Pack Assembly</h2>
+            <p class="text-secondary" style="font-size:var(--text-base);line-height:1.7;margin-bottom:var(--space-3);">We assemble all flat-pack furniture — quickly, correctly, and safely. No more stripped screws or wobbly shelves.</p>
+            <p class="text-secondary text-sm" style="line-height:1.7;">Whether you have a single bedside table or an entire bedroom set, our team handles every brand and assembly system with professional precision.</p>
             <div class="service-feature-list">
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>IKEA, Argos, Wayfair, John Lewis, and all major brands</span></div>
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Beds, wardrobes, desks, bookshelves, storage units</span></div>
@@ -102,7 +102,7 @@
             </div>
             <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
               <a href="#booking" class="btn btn-primary">Book Assembly</a>
-              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £45</strong> per item</span>
+              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-base);margin-right:4px;">From £45</strong> per item</span>
             </div>
           </div>
         </div>
@@ -118,9 +118,9 @@
           </div>
           <div class="service-content" data-reveal="right">
             <div class="section-label">Service 02</div>
-            <h2 id="tv-heading" class="text-5xl" style="margin-bottom:var(--space-5);">TV Wall Mounting</h2>
-            <p class="text-secondary" style="font-size:var(--text-lg);line-height:1.8;margin-bottom:var(--space-4);">A clean, flush, professionally mounted TV transforms a room. We handle the wall type, cable management, and exact positioning.</p>
-            <p class="text-secondary text-sm" style="line-height:1.8;">From plasterboard with stud-finding to masonry and concrete walls — we know every wall type and the right fixings for each.</p>
+            <h2 id="tv-heading" class="text-3xl" style="margin-bottom:var(--space-3);">TV Wall Mounting</h2>
+            <p class="text-secondary" style="font-size:var(--text-base);line-height:1.7;margin-bottom:var(--space-3);">A clean, flush, professionally mounted TV transforms a room. We handle the wall type, cable management, and exact positioning.</p>
+            <p class="text-secondary text-sm" style="line-height:1.7;">From plasterboard with stud-finding to masonry and concrete walls — we know every wall type and the right fixings for each.</p>
             <div class="service-feature-list">
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>All screen sizes from 32" to 100"</span></div>
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Fixed, tilting, and full-motion articulating mounts</span></div>
@@ -129,7 +129,7 @@
             </div>
             <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
               <a href="#booking" class="btn btn-primary">Book TV Mounting</a>
-              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £79</strong> per screen</span>
+              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-base);margin-right:4px;">From £79</strong> per screen</span>
             </div>
           </div>
         </div>
@@ -145,9 +145,9 @@
           </div>
           <div class="service-content" data-reveal="right">
             <div class="section-label">Service 03</div>
-            <h2 id="shelves-heading" class="text-5xl" style="margin-bottom:var(--space-5);">Shelf Installation</h2>
-            <p class="text-secondary" style="font-size:var(--text-lg);line-height:1.8;margin-bottom:var(--space-4);">Floating shelves, alcove shelving, or bracket-mounted systems — perfectly level, perfectly safe, perfectly placed.</p>
-            <p class="text-secondary text-sm" style="line-height:1.8;">We stud-find, use the right rawl plugs, and check weight capacity before installing. Your belongings — and your walls — are in safe hands.</p>
+            <h2 id="shelves-heading" class="text-3xl" style="margin-bottom:var(--space-3);">Shelf Installation</h2>
+            <p class="text-secondary" style="font-size:var(--text-base);line-height:1.7;margin-bottom:var(--space-3);">Floating shelves, alcove shelving, or bracket-mounted systems — perfectly level, perfectly safe, perfectly placed.</p>
+            <p class="text-secondary text-sm" style="line-height:1.7;">We stud-find, use the right rawl plugs, and check weight capacity before installing. Your belongings — and your walls — are in safe hands.</p>
             <div class="service-feature-list">
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Floating shelves on any wall type</span></div>
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Alcove and chimney breast shelving systems</span></div>
@@ -156,7 +156,7 @@
             </div>
             <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
               <a href="#booking" class="btn btn-primary">Book Shelf Install</a>
-              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £35</strong> per shelf</span>
+              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-base);margin-right:4px;">From £35</strong> per shelf</span>
             </div>
           </div>
         </div>
@@ -172,9 +172,9 @@
           </div>
           <div class="service-content" data-reveal="right">
             <div class="section-label">Service 04</div>
-            <h2 id="kitchen-heading" class="text-5xl" style="margin-bottom:var(--space-5);">Modular Kitchen Fitting</h2>
-            <p class="text-secondary" style="font-size:var(--text-lg);line-height:1.8;margin-bottom:var(--space-4);">Our most comprehensive service. Complete modular kitchen installation from base and wall unit fitting to worktop and appliance integration.</p>
-            <p class="text-secondary text-sm" style="line-height:1.8;">We work with all major kitchen brands and ranges including IKEA SEKTION, B&Q GoodHome, Howdens, and Magnet — as well as bespoke kitchen units.</p>
+            <h2 id="kitchen-heading" class="text-3xl" style="margin-bottom:var(--space-3);">Modular Kitchen Fitting</h2>
+            <p class="text-secondary" style="font-size:var(--text-base);line-height:1.7;margin-bottom:var(--space-3);">Our most comprehensive service. Complete modular kitchen installation from base and wall unit fitting to worktop and appliance integration.</p>
+            <p class="text-secondary text-sm" style="line-height:1.7;">We work with all major kitchen brands and ranges including IKEA SEKTION, B&Q GoodHome, Howdens, and Magnet — as well as bespoke kitchen units.</p>
             <div class="service-feature-list">
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Base & wall cabinet installation</span></div>
               <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Worktop cutting and fitting</span></div>
@@ -183,7 +183,7 @@
             </div>
             <div class="flex gap-4" style="flex-wrap:wrap;margin-top:var(--space-6);">
               <a href="#booking" class="btn btn-primary">Book Kitchen Fitting</a>
-              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-lg);margin-right:4px;">From £349</strong> full kitchen</span>
+              <span style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;"><strong style="color:var(--brass);font-size:var(--text-base);margin-right:4px;">From £349</strong> full kitchen</span>
             </div>
           </div>
         </div>
@@ -197,8 +197,8 @@
           <div class="booking-form-grid">
             <div>
               <div class="section-label" style="color:var(--brass-light);">Ready to Book?</div>
-              <h2 id="booking-heading" class="text-5xl text-inverse" style="margin-bottom:var(--space-5);">Get Your<br>Free Quote</h2>
-              <p style="color:rgba(247,243,235,0.6);font-size:var(--text-base);line-height:1.8;margin-bottom:var(--space-8);">Tell us what you need and we'll get back to you within 2 hours with a fixed price and available dates.</p>
+              <h2 id="booking-heading" class="text-4xl text-inverse" style="margin-bottom:var(--space-4);">Get Your<br>Free Quote</h2>
+              <p style="color:rgba(247,243,235,0.6);font-size:var(--text-sm);line-height:1.7;margin-bottom:var(--space-6);">Tell us what you need and we'll get back to you within 2 hours with a fixed price and available dates.</p>
               <div style="display:flex;flex-direction:column;gap:var(--space-4);">
                 <div style="display:flex;align-items:center;gap:var(--space-3);color:rgba(247,243,235,0.7);font-size:var(--text-sm);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Same-week appointments available</div>
                 <div style="display:flex;align-items:center;gap:var(--space-3);color:rgba(247,243,235,0.7);font-size:var(--text-sm);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Fixed, transparent pricing</div>

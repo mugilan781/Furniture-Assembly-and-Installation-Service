@@ -123,9 +123,9 @@
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5.5vw, 5rem);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.25rem, 4.5vw, 3.85rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
   color: var(--ivory);
   max-width: 900px;
   margin: 0 auto var(--space-6);

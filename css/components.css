@@ -1828,11 +1828,11 @@
 .text-lg  { font-size:var(--text-lg); }
 .text-xl  { font-size:var(--text-xl); }
 .text-2xl { font-size:var(--text-2xl); }
-.text-3xl { font-size:var(--text-3xl); }
-.text-4xl { font-size:var(--text-4xl); font-family:var(--font-serif); line-height:1.1; }
-.text-5xl { font-size:var(--text-5xl); font-family:var(--font-serif); line-height:1.1; }
-.text-6xl { font-size:var(--text-6xl); font-family:var(--font-serif); line-height:1.05; }
-.text-7xl { font-size:var(--text-7xl); font-family:var(--font-serif); line-height:1.0; }
+.text-3xl { font-size:var(--text-3xl); font-family:var(--font-serif); line-height:1.2; }
+.text-4xl { font-size:var(--text-4xl); font-family:var(--font-serif); line-height:1.15; }
+.text-5xl { font-size:var(--text-5xl); font-family:var(--font-serif); line-height:1.12; }
+.text-6xl { font-size:var(--text-6xl); font-family:var(--font-serif); line-height:1.08; }
+.text-7xl { font-size:var(--text-7xl); font-family:var(--font-serif); line-height:1.05; }
 .text-primary   { color:var(--text-primary); }
 .text-secondary { color:var(--text-secondary); }
 .text-muted     { color:var(--text-muted); }
